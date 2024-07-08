@@ -1,0 +1,13 @@
+; (set-option :smt.mbqi true)
+(declare-sort Object)
+(declare-sort ClassName)
+(declare-fun Tag (Object) ClassName)
+(declare-fun Subclass (ClassName ClassName) Bool)
+(declare-const object ClassName)
+(assert (forall ((C ClassName)) (Subclass C C)))
+(assert (forall ((C ClassName) (D ClassName) (E ClassName)) (=> (and (Subclass C D) (Subclass D E)) (Subclass C E))))
+;(assert (not (=> (forall ((C ClassName) (D ClassName)) (or (Subclass C D) (Subclass D C))) (forall ((C ClassName)) (Subclass C C)))))
+;(assert (not (=> (forall ((C ClassName)) (Subclass C C)) (forall ((C ClassName) (D ClassName)) (or (Subclass C D) (Subclass D C))))))
+
+;(check-sat)
+;(get-model)

@@ -1,0 +1,114 @@
+(declare-sort Object)
+(declare-sort ClassName)
+(declare-fun Tag (Object) ClassName)
+(declare-fun Subclass (ClassName ClassName) Bool)
+(declare-const object ClassName)
+(assert (forall ((C ClassName)) (Subclass C C)))
+(assert (forall ((C ClassName) (D ClassName) (E ClassName)) (=> (and (Subclass C D) (Subclass D E)) (Subclass C E))))
+(declare-const Pizza ClassName)
+(assert (Subclass Pizza object))
+(declare-fun Pizza__remA (Object ) Object)
+(declare-fun Pizza__noA (Object ) Bool)
+(declare-fun Pizza__price (Object ) Int)
+(declare-fun Pizza__remA_idempotent (Object ) Bool)
+(declare-fun Pizza__remA_noA (Object ) Bool)
+(declare-fun Pizza__remA_noinc_price (Object ) Bool)
+(declare-const Crust ClassName)
+(assert (Subclass Crust Pizza))
+(declare-fun Crust__Ctor () Object)
+(declare-fun Crust__noA (Object ) Bool)
+(declare-fun Crust__price (Object ) Int)
+(declare-fun Crust__remA (Object ) Object)
+(declare-fun Crust__remA_idempotent (Object ) Bool)
+(declare-fun Crust__remA_noA (Object ) Bool)
+(declare-fun Crust__remA_noinc_price (Object ) Bool)
+(declare-fun Crust__noA__IMP (Object ) Bool)
+(declare-fun Crust__price__IMP (Object ) Int)
+(declare-fun Crust__remA__IMP (Object ) Object)
+(declare-fun Crust__remA_idempotent__IMP (Object ) Bool)
+(declare-fun Crust__remA_noA__IMP (Object ) Bool)
+(declare-fun Crust__remA_noinc_price__IMP (Object ) Bool)
+(declare-const Cheese ClassName)
+(assert (Subclass Cheese Pizza))
+(declare-fun Cheese__Ctor (Object) Object)
+(declare-fun Cheese__noA (Object ) Bool)
+(declare-fun Cheese__price (Object ) Int)
+(declare-fun Cheese__remA (Object ) Object)
+(declare-fun Cheese__remA_idempotent (Object ) Bool)
+(declare-fun Cheese__remA_noA (Object ) Bool)
+(declare-fun Cheese__remA_noinc_price (Object ) Bool)
+(declare-fun Cheese__noA__IMP (Object ) Bool)
+(declare-fun Cheese__price__IMP (Object ) Int)
+(declare-fun Cheese__remA__IMP (Object ) Object)
+(declare-fun Cheese__remA_idempotent__IMP (Object ) Bool)
+(declare-fun Cheese__remA_noA__IMP (Object ) Bool)
+(declare-fun Cheese__remA_noinc_price__IMP (Object ) Bool)
+(declare-const Anchovy ClassName)
+(assert (Subclass Anchovy Pizza))
+(declare-fun Anchovy__Ctor (Object) Object)
+(declare-fun Anchovy__noA (Object ) Bool)
+(declare-fun Anchovy__price (Object ) Int)
+(declare-fun Anchovy__remA (Object ) Object)
+(declare-fun Anchovy__remA_idempotent (Object ) Bool)
+(declare-fun Anchovy__remA_noA (Object ) Bool)
+(declare-fun Anchovy__remA_noinc_price (Object ) Bool)
+(declare-fun Anchovy__noA__IMP (Object ) Bool)
+(declare-fun MagicAnchovy__noA__IMP (Object ) Bool)
+(declare-fun Anchovy__price__IMP (Object ) Int)
+(declare-fun Anchovy__remA__IMP (Object ) Object)
+(declare-fun MagicAnchovy__remA__IMP (Object ) Object)
+(declare-fun Anchovy__remA_idempotent__IMP (Object ) Bool)
+(declare-fun MagicAnchovy__remA_idempotent__IMP (Object ) Bool)
+(declare-fun Anchovy__remA_noA__IMP (Object ) Bool)
+(declare-fun MagicAnchovy__remA_noA__IMP (Object ) Bool)
+(declare-fun Anchovy__remA_noinc_price__IMP (Object ) Bool)
+(declare-fun MagicAnchovy__remA_noinc_price__IMP (Object ) Bool)
+(declare-const MagicAnchovy ClassName)
+(assert (Subclass MagicAnchovy Anchovy))
+(declare-fun MagicAnchovy__Ctor (Object) Object)
+(declare-fun MagicAnchovy__price (Object ) Int)
+(declare-fun MagicAnchovy__price__IMP (Object ) Int)
+(declare-const Main ClassName)
+(assert (Subclass Main object))
+(declare-fun Main__Ctor () Object)
+(declare-fun Main__assertSingleCheesePizza (Object  Object ) Int)
+(declare-fun Main__assertEQ (Object  Object  Object ) Int)
+(declare-fun Main__test1 (Object ) Int)
+(declare-fun Main__test2 (Object ) Int)
+(declare-fun Main__assertSingleCheesePizza__IMP (Object  Object ) Int)
+(declare-fun Main__assertEQ__IMP (Object  Object  Object ) Int)
+(declare-fun Main__test1__IMP (Object ) Int)
+(declare-fun Main__test2__IMP (Object ) Int)
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Pizza) (or (= self Crust__Ctor) (exists ((p Object)) (and (and (Subclass (Tag p) Pizza) ) (= self (Cheese__Ctor p)))) (exists ((p Object)) (and (and (Subclass (Tag p) Pizza) ) (= self (Anchovy__Ctor p)))) (exists ((p Object)) (and (and (Subclass (Tag p) Pizza) ) (= self (MagicAnchovy__Ctor p)))) )) ))   ;Generatedness-Const-of-Pizza__Ctor
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Pizza__remA self) (Crust__remA__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Cheese__Ctor p0))) (= (Pizza__remA self) (Cheese__remA__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Anchovy__Ctor p0))) (= (Pizza__remA self) (Anchovy__remA__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (MagicAnchovy__Ctor p0))) (= (Pizza__remA self) (MagicAnchovy__remA__IMP self)))) ))   ;Transfer-Const-of-Pizza__remA
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Pizza) ) (Subclass (Tag (Pizza__remA self)) Pizza))))   ;TransferRet-Const-of-Pizza__remA__IMP
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Pizza__noA self) (Crust__noA__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Cheese__Ctor p0))) (= (Pizza__noA self) (Cheese__noA__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Anchovy__Ctor p0))) (= (Pizza__noA self) (Anchovy__noA__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (MagicAnchovy__Ctor p0))) (= (Pizza__noA self) (MagicAnchovy__noA__IMP self)))) ))   ;Transfer-Const-of-Pizza__noA
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Pizza__price self) (Crust__price__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Cheese__Ctor p0))) (= (Pizza__price self) (Cheese__price__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Anchovy__Ctor p0))) (= (Pizza__price self) (Anchovy__price__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (MagicAnchovy__Ctor p0))) (= (Pizza__price self) (MagicAnchovy__price__IMP self)))) ))   ;Transfer-Const-of-Pizza__price
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Pizza__remA_idempotent self) (Crust__remA_idempotent__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Cheese__Ctor p0))) (= (Pizza__remA_idempotent self) (Cheese__remA_idempotent__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Anchovy__Ctor p0))) (= (Pizza__remA_idempotent self) (Anchovy__remA_idempotent__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (MagicAnchovy__Ctor p0))) (= (Pizza__remA_idempotent self) (MagicAnchovy__remA_idempotent__IMP self)))) ))   ;Transfer-Const-of-Pizza__remA_idempotent
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Pizza__remA_noA self) (Crust__remA_noA__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Cheese__Ctor p0))) (= (Pizza__remA_noA self) (Cheese__remA_noA__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Anchovy__Ctor p0))) (= (Pizza__remA_noA self) (Anchovy__remA_noA__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (MagicAnchovy__Ctor p0))) (= (Pizza__remA_noA self) (MagicAnchovy__remA_noA__IMP self)))) ))   ;Transfer-Const-of-Pizza__remA_noA
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Pizza__remA_noinc_price self) (Crust__remA_noinc_price__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Cheese__Ctor p0))) (= (Pizza__remA_noinc_price self) (Cheese__remA_noinc_price__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (Anchovy__Ctor p0))) (= (Pizza__remA_noinc_price self) (Anchovy__remA_noinc_price__IMP self)))) (forall ((self Object)(p0 Object)) (=> (and (and (Subclass (Tag p0) Pizza) ) (= self (MagicAnchovy__Ctor p0))) (= (Pizza__remA_noinc_price self) (MagicAnchovy__remA_noinc_price__IMP self)))) ))   ;Transfer-Const-of-Pizza__remA_noinc_price
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Crust) (or (= self Crust__Ctor) )) ))   ;Generatedness-Const-of-Crust__Ctor
+(assert (=> true (Subclass (Tag Crust__Ctor ) Crust)))   ;TagCtor-Const-of-Crust__Ctor
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Crust__noA self) (Crust__noA__IMP self)))) ))   ;Transfer-Const-of-Crust__noA
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Crust__price self) (Crust__price__IMP self)))) ))   ;Transfer-Const-of-Crust__price
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Crust__remA self) (Crust__remA__IMP self)))) ))   ;Transfer-Const-of-Crust__remA
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Crust) ) (Subclass (Tag (Crust__remA self)) Pizza))))   ;TransferRet-Const-of-Crust__remA__IMP
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Crust__remA_idempotent self) (Crust__remA_idempotent__IMP self)))) ))   ;Transfer-Const-of-Crust__remA_idempotent
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Crust__remA_noA self) (Crust__remA_noA__IMP self)))) ))   ;Transfer-Const-of-Crust__remA_noA
+(assert (and (forall ((self Object)) (=> (and true (= self Crust__Ctor)) (= (Crust__remA_noinc_price self) (Crust__remA_noinc_price__IMP self)))) ))   ;Transfer-Const-of-Crust__remA_noinc_price
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Crust) ) (= (Crust__noA__IMP self) true))))   ;Implementation-Const-of-Crust__noA__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Crust) ) (= (Crust__price__IMP self) 0))))   ;Implementation-Const-of-Crust__price__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Crust) ) (= (Crust__remA__IMP self) Crust__Ctor))))   ;Implementation-Const-of-Crust__remA__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Crust) ) (Subclass (Tag (Crust__remA__IMP self)) Pizza))))   ;ImplementationRet-Const-of-Crust__remA__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Crust) ) (= (Crust__remA_idempotent__IMP self) true))))   ;Implementation-Const-of-Crust__remA_idempotent__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Crust) ) (= (Crust__remA_noA__IMP self) true))))   ;Implementation-Const-of-Crust__remA_noA__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Crust) ) (= (Crust__remA_noinc_price__IMP self) (let ((_ (Crust__price self ))) (let ((__ (Pizza__price (Crust__remA self ) ))) true))))))   ;Implementation-Const-of-Crust__remA_noinc_price__IMP
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Cheese) (or (exists ((p Object)) (and (and (Subclass (Tag p) Pizza) ) (= self (Cheese__Ctor p)))) )) ))   ;Generatedness-Const-of-Cheese__Ctor
+(assert (forall ((a Int) (b Int)) (and (=> (= b 0) (= a 0)) (=> (= b 1) (= a 1)))))   ;Transfer-Const-of-Anchovy__remA
+(assert (not (forall ((a Int) (b Int)) (=> (or (= b 0) (= b 1)) (or (= a 0) (= a 1))))))
+;(assert (not (and (forall ((v Bool) (self Object) (_ Bool))(=>  (and (or (exists ((p Object)) (and (and (Subclass (Tag p) Pizza) ) (= self (Anchovy__Ctor p)))) (exists ((p Object)) (and (and (Subclass (Tag p) Pizza) ) (= self (MagicAnchovy__Ctor p)))) ) ) (and (or (= a 0) (= a 1) )) )) true ) ))
+;(assert (not (and (forall ((v Bool) (self Object) (_ Bool))(=>  (and (or (exists ((p Object)) (and (and (Subclass (Tag p) Pizza) ) (= self (Anchovy__Ctor p)))) (exists ((p Object)) (and (and (Subclass (Tag p) Pizza) ) (= self (MagicAnchovy__Ctor p)))) ) ) (and (or (= (Anchovy__remA self ) (MagicAnchovy__remA__IMP self )) (= (Anchovy__remA self ) (Anchovy__remA__IMP self )) )) )) true ) ))
+(assert (not (forall ((a Int) (b Int)) (=> (or (= b 0) (= b 1)) (or (= a 0) (= a 1))))))
+;(assert (not (and (forall ((v Bool) (self Object) (_ Bool))(=>  (and  (or (= (Anchovy__remA self ) (Anchovy__remA__IMP self )) (= (Anchovy__remA self ) (MagicAnchovy__remA__IMP self )) )) (and (or (= (Anchovy__remA self ) (MagicAnchovy__remA__IMP self )) (= (Anchovy__remA self ) (Anchovy__remA__IMP self )) ) ) )) true ) ))
+
+(check-sat)

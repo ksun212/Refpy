@@ -1,0 +1,5490 @@
+Example 1: pizza (paper example)
+Time cost: 1.1920928955078125e-06 seconds
+Line: 27
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 31
+Subtype: (v = 0)
+Supertype: (v > 0)
+Checking runs timeout, examine this subtyping again!!!.
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 37
+Subtype: (v = true)
+Supertype: (((self. remA()). remA()) = (self. remA()))
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: (v = true)
+Supertype: ((self. remA()). noA())
+Checking finishs with returncode: unsat
+
+Line: 43
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 45
+Subtype: (v = true)
+Supertype: ((self. price()) >= ((self. remA()). price()))
+Checking finishs with returncode: unsat
+
+Line: 52
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 52
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 57
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: (v > 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: (v = (pa + 1))
+Supertype: (v > 0)
+Checking finishs with returncode: unsat
+
+Line: 62
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 66
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 67
+Subtype: (v = true)
+Supertype: (((self. remA()). remA()) = (self. remA()))
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 71
+Subtype: (v = true)
+Supertype: ((self. remA()). noA())
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 75
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 76
+Subtype: (v = true)
+Supertype: ((self. price()) >= ((self. remA()). price()))
+Checking finishs with returncode: unsat
+
+Line: 83
+Subtype: (v = false)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 87
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 88
+Subtype: (v > 0)
+Supertype: ((v > 0) and (v >= (self.p. price())))
+Checking finishs with returncode: unsat
+
+Line: 92
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 93
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 96
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 97
+Subtype: (v = true)
+Supertype: (((self. remA()). remA()) = (self. remA()))
+Checking finishs with returncode: unsat
+
+Line: 100
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 101
+Subtype: (v = true)
+Supertype: ((self. remA()). noA())
+Checking finishs with returncode: unsat
+
+Line: 105
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 106
+Subtype: (v = true)
+Supertype: ((self. price()) >= ((self. remA()). price()))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 113
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 114
+Subtype: (v > 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 114
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 114
+Subtype: (v = (pa + 1))
+Supertype: ((v > 0) and (v > pa))
+Checking finishs with returncode: unsat
+
+Line: 122
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 126
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 128
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 128
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 128
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 128
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 128
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 129
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 129
+Subtype: true
+Supertype: (v = Cheese__Ctor([Crust__Ctor([])]))
+Checking finishs with returncode: unsat
+
+Line: 130
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: true
+Supertype: (v = (Cheese__Ctor([Anchovy__Ctor([Cheese__Ctor([Crust__Ctor([])])])]). remA()))
+Checking finishs with returncode: unsat
+
+Line: 133
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Time cost: 84.79147982597351 seconds
+2 Error(s) Detected!
+ref_tests_negative/pizza_negative.py:31: SMT Checking Failed
+ref_tests_negative/pizza_negative.py:106: SMT Checking Failed
+
+Example 2: points
+Time cost: 2.1457672119140625e-06 seconds
+Line: 16
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 16
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 16
+Subtype: (v = (xx + yy))
+Supertype: (v = (self.x + self.y))
+Checking runs timeout, examine this subtyping again!!!.
+Time cost: 40.119508504867554 seconds
+1 Error(s) Detected!
+ref_tests_negative/a_little_Java/lession1_basics_points_negative.py:16: SMT Checking Failed
+
+Example 3: kebab
+Time cost: 2.6226043701171875e-06 seconds
+Line: 13
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 21
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 21
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 26
+Subtype: ((v. onlyOnions()) = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 26
+Subtype: true
+Supertype: ((v. onlyOnions()) = true)
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: (v = false)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 37
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 37
+Subtype: true
+Supertype: ((v. onlyOnions()) = false)
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 87
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 87
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 92
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 92
+Subtype: true
+Supertype: (v = Dagger__Ctor([]))
+Checking finishs with returncode: unsat
+
+Line: 97
+Subtype: ((v. whatHolder()) = Dagger__Ctor([]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 97
+Subtype: true
+Supertype: ((v. whatHolder()) = Dagger__Ctor([]))
+Checking finishs with returncode: unsat
+
+Line: 104
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 108
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 112
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 115
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 116
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 117
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: (v = false)
+Checking finishs with returncode: unsat
+
+Line: 119
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 122
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 123
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 124
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 125
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 125
+Subtype: true
+Supertype: (v = Dagger__Ctor([]))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 126
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Time cost: 41.24031639099121 seconds
+1 Error(s) Detected!
+ref_tests_negative/a_little_Java/lession2_methods_kebabAndshish_negative.py:125: SMT Checking Failed
+
+Example 4: pizza (simple)
+Time cost: 1.1920928955078125e-06 seconds
+Line: 27
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 30
+Subtype: (v = 1)
+Supertype: (v = 1)
+Checking finishs with returncode: unsat
+
+Line: 33
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 36
+Subtype: (v = true)
+Supertype: (((self. remA()). remA()) = (self. remA()))
+Checking finishs with returncode: unsat
+
+Line: 39
+Subtype: (v = true)
+Supertype: ((self. remA()). noA())
+Checking finishs with returncode: unsat
+
+Line: 42
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 43
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 43
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 43
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: (v = true)
+Supertype: ((self. price()) >= ((self. remA()). price()))
+Checking finishs with returncode: unsat
+
+Line: 51
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 51
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 55
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 56
+Subtype: (v > 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 56
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 56
+Subtype: (v = (pa + 1))
+Supertype: ((v > 0) and (v = ((self.p. price()) + 1)))
+Checking finishs with returncode: unsat
+
+Line: 60
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 61
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 61
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 64
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 65
+Subtype: (v = true)
+Supertype: (((self. remA()). remA()) = (self. remA()))
+Checking finishs with returncode: unsat
+
+Line: 68
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 69
+Subtype: (v = true)
+Supertype: ((self. remA()). noA())
+Checking finishs with returncode: unsat
+
+Line: 72
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 73
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 76
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: (v = true)
+Supertype: ((self. price()) >= ((self. remA()). price()))
+Checking finishs with returncode: unsat
+
+Line: 85
+Subtype: (v = false)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 89
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 90
+Subtype: (v > 0)
+Supertype: ((v > 0) and (v >= (self.p. price())))
+Checking finishs with returncode: unsat
+
+Line: 94
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 95
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 98
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 99
+Subtype: (v = true)
+Supertype: (((self. remA()). remA()) = (self. remA()))
+Checking finishs with returncode: unsat
+
+Line: 103
+Subtype: (v = true)
+Supertype: ((self. remA()). noA())
+Checking runs timeout, examine this subtyping again!!!.
+Line: 106
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 107
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 109
+Subtype: (v = true)
+Supertype: ((self. price()) >= ((self. remA()). price()))
+Checking finishs with returncode: unsat
+
+Line: 116
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 117
+Subtype: (v > 0)
+Supertype: ((v > 0) and (v > pa))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 125
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 129
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: (v = Cheese__Ctor([Cheese__Ctor([Crust__Ctor([])])]))
+Checking finishs with returncode: unsat
+
+Line: 132
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: (v = (Cheese__Ctor([Anchovy__Ctor([Cheese__Ctor([Crust__Ctor([])])])]). remA()))
+Checking finishs with returncode: unsat
+
+Line: 135
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Time cost: 83.47240042686462 seconds
+2 Error(s) Detected!
+ref_tests_negative/a_little_Java/lession3_new_pizza_negative.py:103: SMT Checking Failed
+ref_tests_negative/a_little_Java/lession3_new_pizza_negative.py:117: SMT Checking Failed
+
+Example 5: pizza (simple visitor)
+Time cost: 1.6689300537109375e-06 seconds
+Line: 14
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 14
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 17
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 18
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 18
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 18
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 21
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 22
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 56
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 56
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 56
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 61
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 65
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 69
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 72
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 73
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 73
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 75
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 75
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 76
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: true
+Supertype: (v = Cheese__Ctor([RemA__Ctor([]);Cheese__Ctor([RemA__Ctor([]);Crust__Ctor([RemA__Ctor([])])])]))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 78
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Time cost: 41.01555871963501 seconds
+1 Error(s) Detected!
+ref_tests_negative/a_little_Java/lession4_visitor_pizza_negative.py:77: SMT Checking Failed
+
+Example 6: pizza visitor
+Time cost: 1.1920928955078125e-06 seconds
+Line: 22
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 31
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 41
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 45
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 45
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 45
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: (v = true)
+Supertype: ((self. remObj(remFn ,toRem)). noObj(toRem))
+Checking finishs with returncode: unsat
+
+Line: 51
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 51
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 51
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 51
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 54
+Subtype: (v = true)
+Supertype: (if (not (toSub = subTo)) then ((self. subObj(subFn ,toSub ,subTo)). noObj(toSub)) else true )
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: (v = (self.t = toRem))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: (v = (not (self.t = toRem)))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: (v = ((not (self.t = toRem)) and (self.r. noObj(toRem))))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 67
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 67
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 67
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 67
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 67
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 71
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 71
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 71
+Subtype: (v = true)
+Supertype: ((self. remObj(remFn ,toRem)). noObj(toRem))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 71
+Subtype: (v = true)
+Supertype: ((self. remObj(remFn ,toRem)). noObj(toRem))
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: (v = true)
+Supertype: (if (not (toSub = subTo)) then ((self. subObj(subFn ,toSub ,subTo)). noObj(toSub)) else true )
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: (v = true)
+Supertype: (if (not (toSub = subTo)) then ((self. subObj(subFn ,toSub ,subTo)). noObj(toSub)) else true )
+Checking finishs with returncode: unsat
+
+Line: 96
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 100
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 103
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 103
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 103
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 103
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 104
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 104
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 104
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 105
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 105
+Subtype: true
+Supertype: (v = Bot__Ctor([]))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 106
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 109
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 109
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 109
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 109
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 109
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 110
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 110
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 110
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 110
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 110
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: true
+Supertype: (v = Top__Ctor([Zero__Ctor([]);Top__Ctor([Zero__Ctor([]);Bot__Ctor([])])]))
+Checking finishs with returncode: unsat
+
+Line: 112
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Time cost: 83.58356237411499 seconds
+2 Error(s) Detected!
+ref_tests_negative/a_little_Java/lession5_objects_pizza_negative.py:71: SMT Checking Failed
+ref_tests_negative/a_little_Java/lession5_objects_pizza_negative.py:105: SMT Checking Failed
+
+Example 7: pizza (abstract)
+Time cost: 1.1920928955078125e-06 seconds
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 32
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 41
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 55
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: (v = (self.counts - 1))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: (v = (self.counts - 1))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 58
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 64
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 67
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 67
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: (v = true)
+Supertype: ((self. accept(remFn)). noObj(remFn.another))
+Checking finishs with returncode: unsat
+
+Line: 73
+Subtype: (v = true)
+Supertype: (if (not (subFn.toSub = subFn.subTo)) then ((self. accept(subFn)). noObj(subFn.toSub)) else true )
+Checking finishs with returncode: unsat
+
+Line: 82
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 82
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 82
+Subtype: (v = (self.t = toRem))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 82
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 82
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 82
+Subtype: (v = (not (self.t = toRem)))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 82
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 82
+Subtype: (v = ((not (self.t = toRem)) and (self.r. noObj(toRem))))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 85
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 85
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 85
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 85
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 88
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 88
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 89
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 89
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 89
+Subtype: (v = true)
+Supertype: ((self. accept(remFn)). noObj(remFn.another))
+Checking finishs with returncode: unsat
+
+Line: 89
+Subtype: (v = true)
+Supertype: ((self. accept(remFn)). noObj(remFn.another))
+Checking finishs with returncode: unsat
+
+Line: 93
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 93
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 93
+Subtype: (v = true)
+Supertype: (if (not (subFn.toSub = subFn.subTo)) then ((self. accept(subFn)). noObj(subFn.toSub)) else true )
+Checking runs timeout, examine this subtyping again!!!.
+Line: 93
+Subtype: (v = true)
+Supertype: (if (not (subFn.toSub = subFn.subTo)) then ((self. accept(subFn)). noObj(subFn.toSub)) else true )
+Checking runs timeout, examine this subtyping again!!!.
+Line: 110
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 114
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 121
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 121
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 121
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 121
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 122
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 122
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 122
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 123
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 123
+Subtype: true
+Supertype: (v = Bot__Ctor([]))
+Checking finishs with returncode: unsat
+
+Line: 124
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 127
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 127
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 127
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 127
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 127
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 128
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 128
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 128
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 128
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 128
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 129
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 129
+Subtype: true
+Supertype: (v = Top__Ctor([Zero__Ctor([]);Top__Ctor([Zero__Ctor([]);Bot__Ctor([])])]))
+Checking finishs with returncode: unsat
+
+Line: 130
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 133
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 133
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 133
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 133
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 133
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 133
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 135
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 135
+Subtype: true
+Supertype: (v = Top__Ctor([Zero__Ctor([]);Top__Ctor([OneMore__Ctor([Zero__Ctor([])]);Bot__Ctor([])])]))
+Checking finishs with returncode: unsat
+
+Line: 136
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Time cost: 88.92529249191284 seconds
+2 Error(s) Detected!
+ref_tests_negative/a_little_Java/lession6_abstractVisitor_pizza_negative.py:93: SMT Checking Failed
+ref_tests_negative/a_little_Java/lession6_abstractVisitor_pizza_negative.py:93: SMT Checking Failed
+
+Example 8: tree
+Time cost: 1.9073486328125e-06 seconds
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 51
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 51
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 51
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 51
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 51
+Subtype: (v = ((t. accepti(self)) + 1))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 54
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 54
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 54
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 54
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 54
+Subtype: (v = ((l. accepti(self)) + 1))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 60
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 63
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 66
+Subtype: (v = false)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 72
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 75
+Subtype: (v = false)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 78
+Subtype: (v = false)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 85
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 85
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 88
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 88
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 91
+Subtype: (v = true)
+Supertype: (hFn.root >= (self. accepti(hFn)))
+Checking finishs with returncode: unsat
+
+Line: 100
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 100
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 100
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 100
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 103
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 103
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 103
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 103
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 106
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 106
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 107
+Subtype: (v = true)
+Supertype: (hFn.root >= (self. accepti(hFn)))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 116
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 116
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 116
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 116
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 119
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 119
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 119
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 119
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 122
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 122
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 123
+Subtype: (v = true)
+Supertype: (hFn.root >= (self. accepti(hFn)))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 130
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 138
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 141
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 141
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 142
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 142
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 143
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 143
+Subtype: true
+Supertype: (v = true)
+Checking finishs with returncode: unsat
+
+Line: 144
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 146
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 146
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 147
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 147
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 148
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 148
+Subtype: true
+Supertype: (v = true)
+Checking finishs with returncode: unsat
+
+Line: 149
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 151
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 151
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 152
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 152
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 152
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 153
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 153
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 153
+Subtype: (v = 1)
+Supertype: (v = n)
+Checking finishs with returncode: unsat
+
+Line: 154
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Time cost: 82.96447682380676 seconds
+2 Error(s) Detected!
+ref_tests_negative/a_little_Java/lession7_overloadingAndgenericVisitor_tree_negative.py:107: SMT Checking Failed
+ref_tests_negative/a_little_Java/lession7_overloadingAndgenericVisitor_tree_negative.py:123: SMT Checking Failed
+
+Example 9: pizza (override)
+Time cost: 1.6689300537109375e-06 seconds
+Line: 26
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 38
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 40
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: (v = (self.counts + 1))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: (v = (self.counts - 1))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 48
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 54
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 57
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 57
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 60
+Subtype: (v = true)
+Supertype: ((self. accept(remFn)). noObj(remFn.another))
+Checking finishs with returncode: unsat
+
+Line: 69
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 69
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 69
+Subtype: (v = (self.t = toRem))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 69
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 69
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 69
+Subtype: (v = (not (self.t = toRem)))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 69
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 69
+Subtype: (v = ((not (self.t = toRem)) and (self.r. noObj(toRem))))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 73
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 73
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 73
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 73
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 76
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 76
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: (v = true)
+Supertype: ((self. accept(remFn)). noObj(remFn.another))
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: (v = true)
+Supertype: ((self. accept(remFn)). noObj(remFn.another))
+Checking finishs with returncode: unsat
+
+Line: 94
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 98
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 102
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 105
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 105
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 105
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 105
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 106
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 106
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 106
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 107
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 107
+Subtype: true
+Supertype: (v = Bot__Ctor([]))
+Checking finishs with returncode: unsat
+
+Line: 108
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 117
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 117
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 117
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 117
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 117
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 117
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 119
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 119
+Subtype: true
+Supertype: (v = Top__Ctor([Zero__Ctor([]);Top__Ctor([OneMore__Ctor([Zero__Ctor([])]);Bot__Ctor([])])]))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 120
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Time cost: 44.83321213722229 seconds
+1 Error(s) Detected!
+ref_tests_negative/a_little_Java/lession8_override_pizza_negative.py:119: SMT Checking Failed
+
+Example 10: geometry
+Time cost: 1.430511474609375e-06 seconds
+Line: 19
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 19
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 19
+Subtype: (v = (xx + yy))
+Supertype: (v = (self.x + self.y))
+Checking finishs with returncode: unsat
+
+Line: 22
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 22
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 22
+Subtype: (v = (p.x + p.y))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 22
+Subtype: (v = (self.x + self.y))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 22
+Subtype: (v = ((p. distanceToO()) >= (self. distanceToO())))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: (v = (self.x - p.x))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: (v = (self.y - p.y))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 25
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 28
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 28
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 28
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 28
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 28
+Subtype: (v = (self.x + p.x))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 28
+Subtype: (v = (self.y + p.y))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 28
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 71
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 71
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: (v = (self.p.x + self.p.y))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 74
+Subtype: (v = (r >= (self.p. distanceToO())))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: (v = (s >= self.p.x))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: (v = (s >= self.p.y))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 77
+Subtype: (v = ((s >= self.p.x) and (s >= self.p.y)))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 81
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 81
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 81
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 81
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 81
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 81
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 81
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 84
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 84
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 84
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 84
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 84
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 84
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 101
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 101
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 101
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 104
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 104
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 104
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 108
+Subtype: (v = true)
+Supertype: (if ((self. O()) = haspt.p) then ((self. accept(haspt)) = true) else true )
+Checking finishs with returncode: unsat
+
+Line: 115
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 115
+Subtype: (v >= 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 115
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 122
+Subtype: (v = true)
+Supertype: (if ((self. O()) = haspt.p) then ((self. accept(haspt)) = true) else true )
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 131
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 134
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 139
+Subtype: (v = true)
+Supertype: (if ((self. O()) = haspt.p) then ((self. accept(haspt)) = true) else true )
+Checking runs timeout, examine this subtyping again!!!.
+Line: 151
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 151
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 151
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 151
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 154
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 154
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 157
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 157
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 161
+Subtype: (v = true)
+Supertype: (if ((self. O()) = haspt.p) then ((self. accept(haspt)) = true) else true )
+Checking finishs with returncode: unsat
+
+Line: 168
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 172
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 175
+Subtype: (v = 10)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 176
+Subtype: (v = 4)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 176
+Subtype: (v = 4)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 176
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 176
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 176
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 177
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 177
+Subtype: true
+Supertype: (v = true)
+Checking finishs with returncode: unsat
+
+Line: 178
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: (v = 10)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 182
+Subtype: (v = 10)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 182
+Subtype: (v = 10)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 182
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 182
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 182
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 183
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 183
+Subtype: true
+Supertype: (v = true)
+Checking runs timeout, examine this subtyping again!!!.
+Line: 184
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 186
+Subtype: (v = 10)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 186
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 186
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 186
+Subtype: (v = 10)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 186
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 186
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 186
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 186
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 187
+Subtype: (v = 6)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 187
+Subtype: (v = 6)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 187
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 187
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 187
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 188
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 188
+Subtype: true
+Supertype: (v = true)
+Checking finishs with returncode: unsat
+
+Line: 189
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Time cost: 85.5997850894928 seconds
+2 Error(s) Detected!
+ref_tests_negative/a_little_Java/lession9_dataExtensionAndfactory_geometry_negative.py:139: SMT Checking Failed
+ref_tests_negative/a_little_Java/lession9_dataExtensionAndfactory_geometry_negative.py:183: SMT Checking Failed
+
+Example 11: list
+Time cost: 1.6689300537109375e-06 seconds
+Line: 49
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 55
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 56
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 56
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 56
+Subtype: (v = (1 + l))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 59
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 62
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 62
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 62
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 62
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 62
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 62
+Subtype: (v = ((self.next. getHead()) >= self.elem))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 62
+Subtype: (v = ((self.next. sorted()) and ((self.next. getHead()) >= self.elem)))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 65
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 65
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 65
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 65
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 65
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 65
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: (10000 >= x)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: (10000 >= x)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: (10000 >= x)
+Supertype: (10000 >= x)
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 82
+Subtype: true
+Supertype: (v. sorted())
+Checking finishs with returncode: unsat
+
+Line: 82
+Subtype: (10000 >= x)
+Supertype: (10000 >= x)
+Checking finishs with returncode: unsat
+
+Line: 83
+Subtype: (v = true)
+Supertype: ((self. insert(x)). sorted())
+Checking runs timeout, examine this subtyping again!!!.
+Line: 89
+Subtype: (v = true)
+Supertype: (if (self. contains(y)) then (Cons__Ctor([x;self]). contains(y)) else true )
+Checking finishs with returncode: unsat
+
+Line: 95
+Subtype: (v = 0)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 98
+Subtype: (v = 10000)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 101
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 104
+Subtype: (v = false)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 109
+Subtype: (10000 >= x)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 109
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 109
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 122
+Subtype: (v = true)
+Supertype: ((self. insert(x)). sorted())
+Checking finishs with returncode: unsat
+
+Line: 127
+Subtype: (v = true)
+Supertype: (if (self. contains(y)) then (Cons__Ctor([x;self]). contains(y)) else true )
+Checking finishs with returncode: unsat
+
+Time cost: 41.85060262680054 seconds
+1 Error(s) Detected!
+ref_tests_negative/list_negative.py:83: SMT Checking Failed
+
+Example 12: lambda
+Time cost: 1.6689300537109375e-06 seconds
+Line: 23
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 24
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 24
+Subtype: (v >= 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 24
+Subtype: (v = (1 + l))
+Supertype: (v >= 1)
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 30
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 30
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 30
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 33
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 33
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 33
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 34
+Subtype: (v = true)
+Supertype: (((self. subst(name ,expr)). size()) >= (self. size()))
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 45
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 47
+Subtype: (v >= 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 47
+Subtype: (v >= 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 47
+Subtype: (v = (s1 + s2))
+Supertype: (v >= 1)
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 53
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 53
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 53
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 55
+Subtype: (v = true)
+Supertype: (((self. subst(name ,expr)). size()) >= (self. size()))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 65
+Subtype: (v = 1)
+Supertype: (v >= 1)
+Checking finishs with returncode: unsat
+
+Line: 68
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 68
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 68
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 68
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 71
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 72
+Subtype: (v = true)
+Supertype: (((self. subst(name ,expr)). size()) >= (self. size()))
+Checking finishs with returncode: unsat
+
+Time cost: 41.73501515388489 seconds
+1 Error(s) Detected!
+ref_tests_negative/lambda_negative.py:55: SMT Checking Failed
+
+Example 13: stlc
+Time cost: 2.86102294921875e-06 seconds
+Line: 99
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 108
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 108
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 108
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 108
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 108
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 108
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 108
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: (v = ((another. get(self.var)) = OkType__Ctor([self.elem])))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 111
+Subtype: (v = (((another. get(self.var)) = OkType__Ctor([self.elem])) and (self.next. included(another))))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 117
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 117
+Subtype: (self. included(v))
+Supertype: (self.next. included(v))
+Checking finishs with returncode: unsat
+
+Line: 117
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 119
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 119
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 119
+Subtype: (v = true)
+Supertype: (if ((self. get(x)) = NoType__Ctor([])) then true else ((self. get(x)) = (another. get(x))) )
+Checking finishs with returncode: unsat
+
+Line: 119
+Subtype: (v = true)
+Supertype: (if ((self. get(x)) = NoType__Ctor([])) then true else ((self. get(x)) = (another. get(x))) )
+Checking finishs with returncode: unsat
+
+Line: 124
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 124
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 124
+Subtype: (v = (vv = self.var))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 124
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 124
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 124
+Subtype: (v = (not (vv = self.var)))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 124
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 124
+Subtype: (v = ((not (vv = self.var)) and (self.next. fresh(vv))))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 130
+Subtype: (v = true)
+Supertype: (if ((self. get(y)) = OkType__Ctor([s])) then ((Cons__Ctor([x;t;self]). get(y)) = OkType__Ctor([s])) else true )
+Checking finishs with returncode: unsat
+
+Line: 137
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 137
+Subtype: (self. included(v))
+Supertype: (self.next. included(v))
+Checking finishs with returncode: unsat
+
+Line: 137
+Subtype: (self. fresh(x))
+Supertype: (self.next. fresh(x))
+Checking finishs with returncode: unsat
+
+Line: 137
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 138
+Subtype: (self. included(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 138
+Subtype: (self. fresh(x))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 138
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 138
+Subtype: true
+Supertype: (not (v = x))
+Checking finishs with returncode: unsat
+
+Line: 138
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 139
+Subtype: (v = true)
+Supertype: (self. included(Cons__Ctor([x;t;another])))
+Checking finishs with returncode: unsat
+
+Line: 146
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 146
+Subtype: (self. included(v))
+Supertype: (self. included(v))
+Checking finishs with returncode: unsat
+
+Line: 146
+Subtype: (self. fresh(x))
+Supertype: (self. fresh(x))
+Checking finishs with returncode: unsat
+
+Line: 146
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 147
+Subtype: (v = true)
+Supertype: (Cons__Ctor([x;t;self]). included(Cons__Ctor([x;t;another])))
+Checking finishs with returncode: unsat
+
+Line: 153
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 157
+Subtype: (v = true)
+Supertype: (if (self. fresh_enough()) then (self. fresh(x)) else true )
+Checking finishs with returncode: unsat
+
+Line: 161
+Subtype: (v = true)
+Supertype: (if (self. fresh_enough()) then (Cons__Ctor([x;t;self]). fresh_enough()) else true )
+Checking finishs with returncode: unsat
+
+Line: 164
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 167
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 172
+Subtype: (v = true)
+Supertype: (if ((self. get(x)) = NoType__Ctor([])) then true else ((self. get(x)) = (another. get(x))) )
+Checking finishs with returncode: unsat
+
+Line: 176
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 182
+Subtype: (v = true)
+Supertype: (if ((self. get(y)) = OkType__Ctor([s])) then ((Cons__Ctor([x;t;self]). get(y)) = OkType__Ctor([s])) else true )
+Checking finishs with returncode: unsat
+
+Line: 188
+Subtype: (v = true)
+Supertype: (self. included(Cons__Ctor([x;t;another])))
+Checking finishs with returncode: unsat
+
+Line: 194
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 194
+Subtype: (self. included(v))
+Supertype: (self. included(v))
+Checking finishs with returncode: unsat
+
+Line: 194
+Subtype: (self. fresh(x))
+Supertype: (self. fresh(x))
+Checking finishs with returncode: unsat
+
+Line: 194
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 195
+Subtype: (v = true)
+Supertype: (Cons__Ctor([x;t;self]). included(Cons__Ctor([x;t;another])))
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: ((self.g. get(self.x)) = OkType__Ctor([v]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: true
+Supertype: (v = HP__Ctor([self.g;FV__Ctor([self.x]);self.t]))
+Checking finishs with returncode: unsat
+
+Line: 236
+Subtype: ((g. included(v)) and (v. fresh_enough()))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 236
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 236
+Subtype: ((self.g. get(self.x)) = OkType__Ctor([v]))
+Supertype: ((g_. get(self.x)) = OkType__Ctor([v]))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 236
+Subtype: true
+Supertype: ((v. prop()) = HP__Ctor([g_;e;t]))
+Checking finishs with returncode: unsat
+
+Line: 257
+Subtype: (self.g. fresh(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 257
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 257
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 257
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 257
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 257
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 257
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 257
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 265
+Subtype: ((g. included(v)) and (v. fresh_enough()))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 265
+Subtype: (self.g. fresh(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 266
+Subtype: ((g. included(v)) and (v. fresh_enough()))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 266
+Subtype: (self.g. fresh(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 266
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 267
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 267
+Subtype: ((g. included(v)) and (v. fresh_enough()))
+Supertype: (self.g. included(v))
+Checking finishs with returncode: unsat
+
+Line: 267
+Subtype: (self.g. fresh(v))
+Supertype: (self.g. fresh(self.x))
+Checking finishs with returncode: unsat
+
+Line: 267
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 268
+Subtype: (self.g. fresh(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 268
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 268
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 268
+Subtype: (self.g. fresh(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 268
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 268
+Subtype: ((g. included(v)) and (v. fresh_enough()))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 268
+Subtype: ((v. prop()) = HP__Ctor([Cons__Ctor([self.x;self.t1;self.g]);self.e;self.t2]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 268
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 268
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 268
+Subtype: true
+Supertype: ((te. prop()) = HP__Ctor([Cons__Ctor([self.x;self.t1;self.g]);self.e;self.t2]))
+Checking finishs with returncode: unsat
+
+Line: 268
+Subtype: true
+Supertype: ((Cons__Ctor([self.x;self.t1;self.g]). included(v)) and (v. fresh_enough()))
+Checking finishs with returncode: unsat
+
+Line: 269
+Subtype: ((g. included(v)) and (v. fresh_enough()))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 269
+Subtype: (self.g. fresh(v))
+Supertype: (g_. fresh(self.x))
+Checking finishs with returncode: unsat
+
+Line: 269
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 269
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 269
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 269
+Subtype: ((v. prop()) = HP__Ctor([Cons__Ctor([self.x;self.t1;g_]);self.e;self.t2]))
+Supertype: ((v. prop()) = HP__Ctor([Cons__Ctor([self.x;self.t1;g_]);self.e;self.t2]))
+Checking finishs with returncode: unsat
+
+Line: 269
+Subtype: true
+Supertype: ((v. prop()) = HP__Ctor([g_;e;t]))
+Checking finishs with returncode: unsat
+
+Line: 297
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 297
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 299
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 299
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 299
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 299
+Subtype: true
+Supertype: (v = HP__Ctor([self.g;App__Ctor([self.e1;self.e2]);self.t2]))
+Checking runs timeout, examine this subtyping again!!!.
+Line: 308
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 308
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 309
+Subtype: ((v. prop()) = HP__Ctor([self.g;self.e1;Arrow__Ctor([self.t1;self.t2])]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 309
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 309
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 309
+Subtype: true
+Supertype: ((self.Te1. prop()) = HP__Ctor([self.g;self.e1;tt]))
+Checking finishs with returncode: unsat
+
+Line: 309
+Subtype: ((g. included(v)) and (v. fresh_enough()))
+Supertype: ((self.g. included(v)) and (v. fresh_enough()))
+Checking finishs with returncode: unsat
+
+Line: 310
+Subtype: ((v. prop()) = HP__Ctor([self.g;self.e2;self.t1]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 310
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 310
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 310
+Subtype: true
+Supertype: ((self.Te2. prop()) = HP__Ctor([self.g;self.e2;self.t1]))
+Checking finishs with returncode: unsat
+
+Line: 310
+Subtype: ((g. included(v)) and (v. fresh_enough()))
+Supertype: ((self.g. included(v)) and (v. fresh_enough()))
+Checking finishs with returncode: unsat
+
+Line: 312
+Subtype: ((g. included(v)) and (v. fresh_enough()))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 312
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 312
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 312
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 312
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 312
+Subtype: ((v. prop()) = HP__Ctor([g_;self.e1;tt]))
+Supertype: ((v. prop()) = HP__Ctor([g_;self.e1;Arrow__Ctor([self.t1;self.t2])]))
+Checking finishs with returncode: unsat
+
+Line: 312
+Subtype: ((v. prop()) = HP__Ctor([g_;self.e2;self.t1]))
+Supertype: ((v. prop()) = HP__Ctor([g_;self.e2;self.t1]))
+Checking finishs with returncode: unsat
+
+Line: 312
+Subtype: true
+Supertype: ((v. prop()) = HP__Ctor([g_;e;t]))
+Checking finishs with returncode: unsat
+
+Time cost: 88.40748620033264 seconds
+2 Error(s) Detected!
+ref_tests_negative/stlc_negative.py:236: SMT Checking Failed
+ref_tests_negative/stlc_negative.py:299: SMT Checking Failed
+
+Example 14: stlc using permutate
+Time cost: 2.384185791015625e-06 seconds
+Line: 21
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 22
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 22
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 22
+Subtype: (v = (1 + l))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 29
+Subtype: ((v. size()) = 1)
+Supertype: ((v. size()) = 1)
+Checking finishs with returncode: unsat
+
+Line: 30
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 30
+Subtype: ((v. size()) = (bb. size()))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 30
+Subtype: true
+Supertype: false
+Checking runs timeout, examine this subtyping again!!!.
+Line: 42
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 43
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 44
+Subtype: (v = (s1 + s2))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 50
+Subtype: ((v. size()) = 1)
+Supertype: ((v. size()) = 1)
+Checking finishs with returncode: unsat
+
+Line: 52
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 52
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 52
+Subtype: ((v. size()) = 1)
+Supertype: ((v. size()) = 1)
+Checking finishs with returncode: unsat
+
+Line: 53
+Subtype: ((v. size()) = (ee1. size()))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 53
+Subtype: ((v. size()) = (ee2. size()))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 53
+Subtype: true
+Supertype: ((v. size()) = (self. size()))
+Checking finishs with returncode: unsat
+
+Line: 70
+Subtype: (v = 1)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 76
+Subtype: ((v. size()) = 1)
+Supertype: ((v. size()) = (self. size()))
+Checking finishs with returncode: unsat
+
+Line: 115
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 115
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 115
+Subtype: (v = true)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 115
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 115
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 115
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 118
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 123
+Subtype: (v = true)
+Supertype: ((self. contains(y)) = (Cons__Ctor([x;t;self]). contains(y)))
+Checking finishs with returncode: unsat
+
+Line: 130
+Subtype: (v = false)
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 133
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 138
+Subtype: (v = true)
+Supertype: ((self. contains(y)) = (Cons__Ctor([x;t;self]). contains(y)))
+Checking finishs with returncode: unsat
+
+Line: 177
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 177
+Subtype: (self.g. contains(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 177
+Subtype: (v = (x = self.x))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 177
+Subtype: (v = (not (x = self.x)))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: (self.g. contains(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: (self.g. contains(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 181
+Subtype: true
+Supertype: (v = HP__Ctor([self.g;FV__Ctor([self.x]);(self.g. get(self.x))]))
+Checking finishs with returncode: unsat
+
+Line: 190
+Subtype: (self. fresh(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 190
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 190
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 190
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 190
+Subtype: (self.g. contains(v))
+Supertype: (Cons__Ctor([x;t2;g]). contains(v))
+Checking finishs with returncode: unsat
+
+Line: 190
+Subtype: true
+Supertype: ((v. prop()) = HP__Ctor([Cons__Ctor([x;t2;g]);e;t]))
+Checking finishs with returncode: unsat
+
+Line: 209
+Subtype: ((v. prop()) = HP__Ctor([Cons__Ctor([self.x;self.t1;self.g]);self.e;self.t2]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 209
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 209
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 212
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 212
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 212
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 212
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 212
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 212
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 212
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 212
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: ((v. prop()) = HP__Ctor([Cons__Ctor([self.x;self.t1;self.g]);self.e;self.t2]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: true
+Supertype: ((te. prop()) = HP__Ctor([Cons__Ctor([self.x;self.t1;self.g]);self.e;self.t2]))
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: (self. fresh(v))
+Supertype: (te. fresh(v))
+Checking finishs with returncode: unsat
+
+Line: 228
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 229
+Subtype: ((v. prop()) = HP__Ctor([Cons__Ctor([x;t2;Cons__Ctor([self.x;self.t1;self.g])]);self.e;self.t2]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 229
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 229
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 229
+Subtype: (self. fresh(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 229
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 229
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 229
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 229
+Subtype: true
+Supertype: ((te1. prop()) = HP__Ctor([Cons__Ctor([x;t2;Cons__Ctor([self.x;self.t1;self.g])]);self.e;self.t2]))
+Checking finishs with returncode: unsat
+
+Line: 230
+Subtype: (self. fresh(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 230
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 230
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 230
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 230
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 230
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 230
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 230
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 230
+Subtype: ((v. prop()) = HP__Ctor([Cons__Ctor([self.x;self.t1;Cons__Ctor([x;t2;self.g])]);self.e;self.t2]))
+Supertype: ((v. prop()) = HP__Ctor([Cons__Ctor([self.x;self.t1;Cons__Ctor([x;t2;g])]);self.e;self.t2]))
+Checking finishs with returncode: unsat
+
+Line: 230
+Subtype: true
+Supertype: ((v. prop()) = HP__Ctor([Cons__Ctor([x;t2;g]);e;t]))
+Checking finishs with returncode: unsat
+
+Line: 253
+Subtype: ((v. prop()) = HP__Ctor([self.g;self.e1;Arrow__Ctor([self.t1;self.t2])]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 253
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 253
+Subtype: ((v. prop()) = HP__Ctor([self.g;self.e2;self.t1]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 253
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 253
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 253
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 253
+Subtype: (v = ((self.Te1. fresh(x)) and (self.Te2. fresh(x))))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 261
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 261
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 263
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 263
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 263
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 263
+Subtype: true
+Supertype: (v = HP__Ctor([self.g;App__Ctor([self.e1;self.e2]);self.t2]))
+Checking finishs with returncode: unsat
+
+Line: 273
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 273
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 274
+Subtype: ((v. prop()) = HP__Ctor([self.g;self.e1;Arrow__Ctor([self.t1;self.t2])]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 274
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 274
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 274
+Subtype: true
+Supertype: ((self.Te1. prop()) = HP__Ctor([self.g;self.e1;tt]))
+Checking finishs with returncode: unsat
+
+Line: 274
+Subtype: (self. fresh(v))
+Supertype: (self.Te1. fresh(v))
+Checking finishs with returncode: unsat
+
+Line: 274
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 275
+Subtype: ((v. prop()) = HP__Ctor([self.g;self.e2;self.t1]))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 275
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 275
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 275
+Subtype: true
+Supertype: ((self.Te2. prop()) = HP__Ctor([self.g;self.e2;self.t1]))
+Checking finishs with returncode: unsat
+
+Line: 275
+Subtype: (self. fresh(v))
+Supertype: (self.Te2. fresh(v))
+Checking finishs with returncode: unsat
+
+Line: 275
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 277
+Subtype: (self. fresh(v))
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 277
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 277
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 277
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 277
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 277
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 277
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 277
+Subtype: true
+Supertype: true
+Checking finishs with returncode: unsat
+
+Line: 277
+Subtype: ((v. prop()) = HP__Ctor([Cons__Ctor([x;t2;self.g]);self.e1;tt]))
+Supertype: ((v. prop()) = HP__Ctor([Cons__Ctor([x;t2;self.g]);self.e1;Arrow__Ctor([self.t1;self.t2])]))
+Checking finishs with returncode: unsat
+
+Line: 277
+Subtype: ((v. prop()) = HP__Ctor([Cons__Ctor([x;t2;self.g]);self.e2;self.t1]))
+Supertype: ((v. prop()) = HP__Ctor([Cons__Ctor([x;t2;self.g]);self.e2;self.t1]))
+Checking finishs with returncode: unsat
+
+Line: 277
+Subtype: true
+Supertype: ((v. prop()) = HP__Ctor([Cons__Ctor([x;t2;g]);e;t]))
+Checking finishs with returncode: unsat
+
+Time cost: 48.19622325897217 seconds
+1 Error(s) Detected!
+ref_tests_negative/stlc2_negative.py:30: SMT Checking Failed
+

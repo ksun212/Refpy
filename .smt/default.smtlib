@@ -1,0 +1,447 @@
+;(set-option :smt.mbqi true)
+(declare-sort Object)
+(declare-sort ClassName)
+(declare-fun Tag (Object) ClassName)
+(declare-fun Subclass (ClassName ClassName) Bool)
+(declare-const object ClassName)
+(assert (forall ((C ClassName)) (Subclass C C)))
+(assert (forall ((C ClassName) (D ClassName) (E ClassName)) (=> (and (Subclass C D) (Subclass D E)) (Subclass C E))))
+(declare-const Expr ClassName)
+(assert (Subclass Expr object))
+(declare-fun Expr__size (Object ) Int)
+(declare-fun Expr__subst (Object  Int  Object ) Object)
+(declare-const Lambda ClassName)
+(assert (Subclass Lambda Expr))
+(declare-fun Lambda__Ctor (Int Object) Object)
+(declare-fun Lambda__size (Object ) Int)
+(declare-fun Lambda__subst (Object  Int  Object ) Object)
+(declare-fun Lambda__size__IMP (Object ) Int)
+(declare-fun Lambda__subst__IMP (Object  Int  Object ) Object)
+(declare-fun Lambda__v (Object) Int)
+(declare-fun Lambda__body (Object) Object)
+(declare-const App ClassName)
+(assert (Subclass App Expr))
+(declare-fun App__Ctor (Object Object) Object)
+(declare-fun App__size (Object ) Int)
+(declare-fun App__subst (Object  Int  Object ) Object)
+(declare-fun App__size__IMP (Object ) Int)
+(declare-fun App__subst__IMP (Object  Int  Object ) Object)
+(declare-fun App__e1 (Object) Object)
+(declare-fun App__e2 (Object) Object)
+(declare-const FV ClassName)
+(assert (Subclass FV Expr))
+(declare-fun FV__Ctor (Int) Object)
+(declare-fun FV__size (Object ) Int)
+(declare-fun FV__subst (Object  Int  Object ) Object)
+(declare-fun FV__size__IMP (Object ) Int)
+(declare-fun FV__subst__IMP (Object  Int  Object ) Object)
+(declare-fun FV__v (Object) Int)
+(declare-const Type ClassName)
+(assert (Subclass Type object))
+(declare-const Arrow ClassName)
+(assert (Subclass Arrow Type))
+(declare-fun Arrow__Ctor (Object Object) Object)
+(declare-fun Arrow__t1 (Object) Object)
+(declare-fun Arrow__t2 (Object) Object)
+(declare-const noType ClassName)
+(assert (Subclass noType Type))
+(declare-fun noType__Ctor () Object)
+(declare-const Env ClassName)
+(assert (Subclass Env object))
+(declare-fun Env__contains (Object  Int ) Bool)
+(declare-fun Env__get (Object  Int ) Object)
+(declare-fun Env__weaken (Object  Int  Object  Int ) Bool)
+(declare-const Cons ClassName)
+(assert (Subclass Cons Env))
+(declare-fun Cons__Ctor (Int Object Object) Object)
+(declare-fun Cons__contains (Object  Int ) Bool)
+(declare-fun Cons__get (Object  Int ) Object)
+(declare-fun Cons__weaken (Object  Int  Object  Int ) Bool)
+(declare-fun Cons__contains__IMP (Object  Int ) Bool)
+(declare-fun Cons__get__IMP (Object  Int ) Object)
+(declare-fun Cons__weaken__IMP (Object  Int  Object  Int ) Bool)
+(declare-fun Cons__var (Object) Int)
+(declare-fun Cons__elem (Object) Object)
+(declare-fun Cons__next (Object) Object)
+(declare-const Nil ClassName)
+(assert (Subclass Nil Env))
+(declare-fun Nil__Ctor () Object)
+(declare-fun Nil__contains (Object  Int ) Bool)
+(declare-fun Nil__get (Object  Int ) Object)
+(declare-fun Nil__weaken (Object  Int  Object  Int ) Bool)
+(declare-fun Nil__contains__IMP (Object  Int ) Bool)
+(declare-fun Nil__get__IMP (Object  Int ) Object)
+(declare-fun Nil__weaken__IMP (Object  Int  Object  Int ) Bool)
+(declare-const HP ClassName)
+(assert (Subclass HP object))
+(declare-fun HP__Ctor (Object Object Object) Object)
+(declare-fun HP__gamma (Object) Object)
+(declare-fun HP__e (Object) Object)
+(declare-fun HP__tau (Object) Object)
+(declare-const HasType ClassName)
+(assert (Subclass HasType object))
+(declare-fun HasType__fresh (Object  Int ) Bool)
+(declare-fun HasType__prop (Object ) Object)
+(declare-fun HasType__permutate (Object  Int  Object  Int  Object  Object  Object  Object ) Object)
+(declare-fun HasType__weaken (Object  Object  Object  Object  Int  Object ) Object)
+(declare-fun TVar__permutate__IMP (Object  Int  Object  Int  Object  Object  Object  Object ) Object)
+(declare-fun TAbs__permutate__IMP (Object  Int  Object  Int  Object  Object  Object  Object ) Object)
+(declare-fun TApp__permutate__IMP (Object  Int  Object  Int  Object  Object  Object  Object ) Object)
+(declare-const TVar ClassName)
+(assert (Subclass TVar HasType))
+(declare-fun TVar__Ctor (Object Int) Object)
+(declare-fun TVar__fresh (Object  Int ) Bool)
+(declare-fun TVar__prop (Object ) Object)
+(declare-fun TVar__weaken (Object  Object  Object  Object  Int  Object ) Object)
+(declare-fun TVar__fresh__IMP (Object  Int ) Bool)
+(declare-fun TVar__prop__IMP (Object ) Object)
+(declare-fun TVar__weaken__IMP (Object  Object  Object  Object  Int  Object ) Object)
+(declare-fun TVar__g (Object) Object)
+(declare-fun TVar__x (Object) Int)
+(declare-const TAbs ClassName)
+(assert (Subclass TAbs HasType))
+(declare-fun TAbs__Ctor (Object Int Object Object Object Object) Object)
+(declare-fun TAbs__fresh (Object  Int ) Bool)
+(declare-fun TAbs__prop (Object ) Object)
+(declare-fun TAbs__weaken (Object  Object  Object  Object  Int  Object ) Object)
+(declare-fun TAbs__fresh__IMP (Object  Int ) Bool)
+(declare-fun TAbs__prop__IMP (Object ) Object)
+(declare-fun TAbs__weaken__IMP (Object  Object  Object  Object  Int  Object ) Object)
+(declare-fun TAbs__g (Object) Object)
+(declare-fun TAbs__x (Object) Int)
+(declare-fun TAbs__e (Object) Object)
+(declare-fun TAbs__t1 (Object) Object)
+(declare-fun TAbs__t2 (Object) Object)
+(declare-fun TAbs__te (Object) Object)
+(declare-const TApp ClassName)
+(assert (Subclass TApp HasType))
+(declare-fun TApp__Ctor (Object Object Object Object Object Object Object) Object)
+(declare-fun TApp__fresh (Object  Int ) Bool)
+(declare-fun TApp__prop (Object ) Object)
+(declare-fun TApp__weaken (Object  Object  Object  Object  Int  Object ) Object)
+(declare-fun TApp__fresh__IMP (Object  Int ) Bool)
+(declare-fun TApp__prop__IMP (Object ) Object)
+(declare-fun TApp__weaken__IMP (Object  Object  Object  Object  Int  Object ) Object)
+(declare-fun TApp__g (Object) Object)
+(declare-fun TApp__e1 (Object) Object)
+(declare-fun TApp__e2 (Object) Object)
+(declare-fun TApp__t1 (Object) Object)
+(declare-fun TApp__t2 (Object) Object)
+(declare-fun TApp__Te1 (Object) Object)
+(declare-fun TApp__Te2 (Object) Object)
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Expr) (or (exists ((v Int) (body Object)) (and (and (Subclass (Tag body) Expr) ) (= self (Lambda__Ctor v body)))) (exists ((e1 Object) (e2 Object)) (and (and (Subclass (Tag e1) Expr) (Subclass (Tag e2) Expr) ) (= self (App__Ctor e1 e2)))) (exists ((v Int)) (and true (= self (FV__Ctor v)))) )) ))   ;Generatedness-Const-of-Expr__Ctor
+(assert (and (forall ((self Object)(v0 Int) (body0 Object)) (=> (and (and (Subclass (Tag body0) Expr) ) (= self (Lambda__Ctor v0 body0))) (= (Expr__size self) (let ((n (Lambda__body self))) (let ((l (Expr__size n ))) (+ 1 l)))))) (forall ((self Object)(e10 Object) (e20 Object)) (=> (and (and (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) ) (= self (App__Ctor e10 e20))) (= (Expr__size self) (let ((ee1 (App__e1 self))) (let ((ee2 (App__e2 self))) (let ((s1 (Expr__size ee1 ))) (let ((s2 (Expr__size ee2 ))) (+ s1 s2)))))))) (forall ((self Object)(v0 Int)) (=> (and true (= self (FV__Ctor v0))) (= (Expr__size self) 1))) ))   ;Transfer-Const-of-Expr__size
+(assert (and (forall ((self Object) (name Int) (expr Object)(v0 Int) (body0 Object)) (=> (and (and (Subclass (Tag body0) Expr) ) (= self (Lambda__Ctor v0 body0))) (= (Expr__subst self name expr) (let ((vv (Lambda__v self))) (let ((bb (Lambda__body self))) (let ((bb2 (Expr__subst bb name expr))) (Lambda__Ctor vv bb2))))))) (forall ((self Object) (name Int) (expr Object)(e10 Object) (e20 Object)) (=> (and (and (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) ) (= self (App__Ctor e10 e20))) (= (Expr__subst self name expr) (let ((ee1 (App__e1 self))) (let ((ee1_ (Expr__subst ee1 name expr))) (let ((ee2 (App__e2 self))) (let ((ee2_ (Expr__subst ee2 name expr))) (App__Ctor ee1_ ee2_)))))))) (forall ((self Object) (name Int) (expr Object)(v0 Int)) (=> (and true (= self (FV__Ctor v0))) (= (Expr__subst self name expr) expr))) ))   ;Transfer-Const-of-Expr__subst
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) Expr) (Subclass (Tag expr) Expr) ) (Subclass (Tag (Expr__subst self name expr)) Expr))))   ;TransferRet-Const-of-Expr__subst__IMP
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Lambda) (or (exists ((v Int) (body Object)) (and (and (Subclass (Tag body) Expr) ) (= self (Lambda__Ctor v body)))) )) ))   ;Generatedness-Const-of-Lambda__Ctor
+(assert (forall ((v0 Int) (body0 Object)) (=> (and (Subclass (Tag body0) Expr) ) (Subclass (Tag (Lambda__Ctor v0 body0)) Lambda))))   ;TagCtor-Const-of-Lambda__Ctor
+(assert (forall ((v0 Int) (body0 Object) (v1 Int) (body1 Object)) (=> (and (and (Subclass (Tag body0) Expr) ) (and (Subclass (Tag body1) Expr) ) ) (=> (= (Lambda__Ctor v0 body0) (Lambda__Ctor v1 body1)) (= v0 v1))  )))
+(assert (forall ((v0 Int) (body0 Object)) (=> (and (Subclass (Tag body0) Expr) ) (= (Lambda__v (Lambda__Ctor v0 body0)) v0))))   ;FA-Const-of-Lambda__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Lambda) (Subclass (Tag (Lambda__body self)) Expr))))
+(assert (forall ((v0 Int) (body0 Object) (v1 Int) (body1 Object)) (=> (and (and (Subclass (Tag body0) Expr) ) (and (Subclass (Tag body1) Expr) ) ) (=> (= (Lambda__Ctor v0 body0) (Lambda__Ctor v1 body1)) (= body0 body1))  )))
+(assert (forall ((v0 Int) (body0 Object)) (=> (and (Subclass (Tag body0) Expr) ) (= (Lambda__body (Lambda__Ctor v0 body0)) body0))))   ;FA-Const-of-Lambda__Ctor
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Lambda) ) (= (Lambda__size self) (let ((n (Lambda__body self))) (let ((l (Expr__size n ))) (+ 1 l)))))))   ;Transfer-Const-of-Lambda__size
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Lambda) ) (= (Lambda__size self) (Expr__size self)))))   ;Inherit-Const-of-Lambda__size
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) Lambda) (Subclass (Tag expr) Expr) ) (= (Lambda__subst self name expr) (let ((vv (Lambda__v self))) (let ((bb (Lambda__body self))) (let ((bb2 (Expr__subst bb name expr))) (Lambda__Ctor vv bb2))))))))   ;Transfer-Const-of-Lambda__subst
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) Lambda) (Subclass (Tag expr) Expr) ) (Subclass (Tag (Lambda__subst self name expr)) Lambda))))
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) Lambda) (Subclass (Tag expr) Expr) ) (= (Lambda__subst self name expr) (Expr__subst self name expr)))))   ;Inherit-Const-of-Lambda__subst
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) Lambda) ) (= (Lambda__size__IMP self) (let ((n (Lambda__body self))) (let ((l (Expr__size n ))) (+ 1 l)))))))   ;Implementation-Const-of-Lambda__size__IMP
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) Lambda) (Subclass (Tag expr) Expr) ) (= (Lambda__subst__IMP self name expr) (let ((vv (Lambda__v self))) (let ((bb (Lambda__body self))) (let ((bb2 (Expr__subst bb name expr))) (Lambda__Ctor vv bb2))))))))   ;Implementation-Const-of-Lambda__subst__IMP
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) Lambda) (Subclass (Tag expr) Expr) ) (Subclass (Tag (Lambda__subst__IMP self name expr)) Lambda))))   ;ImplementationRet-Const-of-Lambda__subst__IMP
+(assert (forall ((self Object)) (=> (Subclass (Tag self) App) (or (exists ((e1 Object) (e2 Object)) (and (and (Subclass (Tag e1) Expr) (Subclass (Tag e2) Expr) ) (= self (App__Ctor e1 e2)))) )) ))   ;Generatedness-Const-of-App__Ctor
+(assert (forall ((e10 Object) (e20 Object)) (=> (and (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) ) (Subclass (Tag (App__Ctor e10 e20)) App))))   ;TagCtor-Const-of-App__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) App) (Subclass (Tag (App__e1 self)) Expr))))
+(assert (forall ((e10 Object) (e20 Object) (e11 Object) (e21 Object)) (=> (and (and (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) ) (and (Subclass (Tag e11) Expr) (Subclass (Tag e21) Expr) ) ) (=> (= (App__Ctor e10 e20) (App__Ctor e11 e21)) (= e10 e11))  )))
+(assert (forall ((e10 Object) (e20 Object)) (=> (and (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) ) (= (App__e1 (App__Ctor e10 e20)) e10))))   ;FA-Const-of-App__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) App) (Subclass (Tag (App__e2 self)) Expr))))
+(assert (forall ((e10 Object) (e20 Object) (e11 Object) (e21 Object)) (=> (and (and (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) ) (and (Subclass (Tag e11) Expr) (Subclass (Tag e21) Expr) ) ) (=> (= (App__Ctor e10 e20) (App__Ctor e11 e21)) (= e20 e21))  )))
+(assert (forall ((e10 Object) (e20 Object)) (=> (and (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) ) (= (App__e2 (App__Ctor e10 e20)) e20))))   ;FA-Const-of-App__Ctor
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) App) ) (= (App__size self) (let ((ee1 (App__e1 self))) (let ((ee2 (App__e2 self))) (let ((s1 (Expr__size ee1 ))) (let ((s2 (Expr__size ee2 ))) (+ s1 s2)))))))))   ;Transfer-Const-of-App__size
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) App) ) (= (App__size self) (Expr__size self)))))   ;Inherit-Const-of-App__size
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) App) (Subclass (Tag expr) Expr) ) (= (App__subst self name expr) (let ((ee1 (App__e1 self))) (let ((ee1_ (Expr__subst ee1 name expr))) (let ((ee2 (App__e2 self))) (let ((ee2_ (Expr__subst ee2 name expr))) (App__Ctor ee1_ ee2_)))))))))   ;Transfer-Const-of-App__subst
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) App) (Subclass (Tag expr) Expr) ) (Subclass (Tag (App__subst self name expr)) App))))
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) App) (Subclass (Tag expr) Expr) ) (= (App__subst self name expr) (Expr__subst self name expr)))))   ;Inherit-Const-of-App__subst
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) App) ) (= (App__size__IMP self) (let ((ee1 (App__e1 self))) (let ((ee2 (App__e2 self))) (let ((s1 (Expr__size ee1 ))) (let ((s2 (Expr__size ee2 ))) (+ s1 s2)))))))))   ;Implementation-Const-of-App__size__IMP
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) App) (Subclass (Tag expr) Expr) ) (= (App__subst__IMP self name expr) (let ((ee1 (App__e1 self))) (let ((ee1_ (Expr__subst ee1 name expr))) (let ((ee2 (App__e2 self))) (let ((ee2_ (Expr__subst ee2 name expr))) (App__Ctor ee1_ ee2_)))))))))   ;Implementation-Const-of-App__subst__IMP
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) App) (Subclass (Tag expr) Expr) ) (Subclass (Tag (App__subst__IMP self name expr)) App))))   ;ImplementationRet-Const-of-App__subst__IMP
+(assert (forall ((self Object)) (=> (Subclass (Tag self) FV) (or (exists ((v Int)) (and true (= self (FV__Ctor v)))) )) ))   ;Generatedness-Const-of-FV__Ctor
+(assert (forall ((v0 Int)) (=> true (Subclass (Tag (FV__Ctor v0)) FV))))   ;TagCtor-Const-of-FV__Ctor
+(assert (forall ((v0 Int) (v1 Int)) (=> (and true true ) (=> (= (FV__Ctor v0) (FV__Ctor v1)) (= v0 v1))  )))
+(assert (forall ((v0 Int)) (=> true (= (FV__v (FV__Ctor v0)) v0))))   ;FA-Const-of-FV__Ctor
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) FV) ) (= (FV__size self) 1))))   ;Transfer-Const-of-FV__size
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) FV) ) (= (FV__size self) (Expr__size self)))))   ;Inherit-Const-of-FV__size
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) FV) (Subclass (Tag expr) Expr) ) (= (FV__subst self name expr) expr))))   ;Transfer-Const-of-FV__subst
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) FV) (Subclass (Tag expr) Expr) ) (Subclass (Tag (FV__subst self name expr)) Expr))))
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) FV) (Subclass (Tag expr) Expr) ) (= (FV__subst self name expr) (Expr__subst self name expr)))))   ;Inherit-Const-of-FV__subst
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) FV) ) (= (FV__size__IMP self) 1))))   ;Implementation-Const-of-FV__size__IMP
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) FV) (Subclass (Tag expr) Expr) ) (= (FV__subst__IMP self name expr) expr))))   ;Implementation-Const-of-FV__subst__IMP
+(assert (forall ((self Object) (name Int) (expr Object)) (=> (and (Subclass (Tag self) FV) (Subclass (Tag expr) Expr) ) (Subclass (Tag (FV__subst__IMP self name expr)) Expr))))   ;ImplementationRet-Const-of-FV__subst__IMP
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Type) (or (exists ((t1 Object) (t2 Object)) (and (and (Subclass (Tag t1) Type) (Subclass (Tag t2) Type) ) (= self (Arrow__Ctor t1 t2)))) (= self noType__Ctor) )) ))   ;Generatedness-Const-of-Type__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Arrow) (or (exists ((t1 Object) (t2 Object)) (and (and (Subclass (Tag t1) Type) (Subclass (Tag t2) Type) ) (= self (Arrow__Ctor t1 t2)))) )) ))   ;Generatedness-Const-of-Arrow__Ctor
+(assert (forall ((t10 Object) (t20 Object)) (=> (and (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) ) (Subclass (Tag (Arrow__Ctor t10 t20)) Arrow))))   ;TagCtor-Const-of-Arrow__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Arrow) (Subclass (Tag (Arrow__t1 self)) Type))))
+(assert (forall ((t10 Object) (t20 Object) (t11 Object) (t21 Object)) (=> (and (and (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) ) (and (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) ) ) (=> (= (Arrow__Ctor t10 t20) (Arrow__Ctor t11 t21)) (= t10 t11))  )))
+(assert (forall ((t10 Object) (t20 Object)) (=> (and (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) ) (= (Arrow__t1 (Arrow__Ctor t10 t20)) t10))))   ;FA-Const-of-Arrow__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Arrow) (Subclass (Tag (Arrow__t2 self)) Type))))
+(assert (forall ((t10 Object) (t20 Object) (t11 Object) (t21 Object)) (=> (and (and (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) ) (and (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) ) ) (=> (= (Arrow__Ctor t10 t20) (Arrow__Ctor t11 t21)) (= t20 t21))  )))
+(assert (forall ((t10 Object) (t20 Object)) (=> (and (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) ) (= (Arrow__t2 (Arrow__Ctor t10 t20)) t20))))   ;FA-Const-of-Arrow__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) noType) (or (= self noType__Ctor) )) ))   ;Generatedness-Const-of-noType__Ctor
+(assert (=> true (Subclass (Tag noType__Ctor ) noType)))   ;TagCtor-Const-of-noType__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Env) (or (exists ((var Int) (elem Object) (next Object)) (and (and (Subclass (Tag elem) Type) (Subclass (Tag next) Env) ) (= self (Cons__Ctor var elem next)))) (= self Nil__Ctor) )) ))   ;Generatedness-Const-of-Env__Ctor
+(assert (and (forall ((self Object) (x Int)(var0 Int) (elem0 Object) (next0 Object)) (=> (and (and (Subclass (Tag elem0) Type) (Subclass (Tag next0) Env) ) (= self (Cons__Ctor var0 elem0 next0))) (= (Env__contains self x) (ite (= x (Cons__var self)) true (Env__contains (Cons__next self) x))))) (forall ((self Object) (x Int)) (=> (and true (= self Nil__Ctor)) (= (Env__contains self x) false))) ))   ;Transfer-Const-of-Env__contains
+(assert (and (forall ((self Object) (x Int)(var0 Int) (elem0 Object) (next0 Object)) (=> (and (and (Subclass (Tag elem0) Type) (Subclass (Tag next0) Env) ) (= self (Cons__Ctor var0 elem0 next0))) (= (Env__get self x) (ite (= x (Cons__var self)) (Cons__elem self) (Env__get (Cons__next self) x))))) (forall ((self Object) (x Int)) (=> (and true (= self Nil__Ctor)) (= (Env__get self x) noType__Ctor))) ))   ;Transfer-Const-of-Env__get
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Env) ) (Subclass (Tag (Env__get self x)) Type))))   ;TransferRet-Const-of-Env__get__IMP
+(assert (and (forall ((self Object) (x Int) (t Object) (y Int)(var0 Int) (elem0 Object) (next0 Object)) (=> (and (and (Subclass (Tag elem0) Type) (Subclass (Tag next0) Env) ) (= self (Cons__Ctor var0 elem0 next0))) (= (Env__weaken self x t y) true))) (forall ((self Object) (x Int) (t Object) (y Int)) (=> (and true (= self Nil__Ctor)) (= (Env__weaken self x t y) true))) ))   ;Transfer-Const-of-Env__weaken
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Cons) (or (exists ((var Int) (elem Object) (next Object)) (and (and (Subclass (Tag elem) Type) (Subclass (Tag next) Env) ) (= self (Cons__Ctor var elem next)))) )) ))   ;Generatedness-Const-of-Cons__Ctor
+(assert (forall ((var0 Int) (elem0 Object) (next0 Object)) (=> (and (Subclass (Tag elem0) Type) (Subclass (Tag next0) Env) ) (Subclass (Tag (Cons__Ctor var0 elem0 next0)) Cons))))   ;TagCtor-Const-of-Cons__Ctor
+(assert (forall ((var0 Int) (elem0 Object) (next0 Object) (var1 Int) (elem1 Object) (next1 Object)) (=> (and (and (Subclass (Tag elem0) Type) (Subclass (Tag next0) Env) ) (and (Subclass (Tag elem1) Type) (Subclass (Tag next1) Env) ) ) (=> (= (Cons__Ctor var0 elem0 next0) (Cons__Ctor var1 elem1 next1)) (= var0 var1))  )))
+(assert (forall ((var0 Int) (elem0 Object) (next0 Object)) (=> (and (Subclass (Tag elem0) Type) (Subclass (Tag next0) Env) ) (= (Cons__var (Cons__Ctor var0 elem0 next0)) var0))))   ;FA-Const-of-Cons__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Cons) (Subclass (Tag (Cons__elem self)) Type))))
+(assert (forall ((var0 Int) (elem0 Object) (next0 Object) (var1 Int) (elem1 Object) (next1 Object)) (=> (and (and (Subclass (Tag elem0) Type) (Subclass (Tag next0) Env) ) (and (Subclass (Tag elem1) Type) (Subclass (Tag next1) Env) ) ) (=> (= (Cons__Ctor var0 elem0 next0) (Cons__Ctor var1 elem1 next1)) (= elem0 elem1))  )))
+(assert (forall ((var0 Int) (elem0 Object) (next0 Object)) (=> (and (Subclass (Tag elem0) Type) (Subclass (Tag next0) Env) ) (= (Cons__elem (Cons__Ctor var0 elem0 next0)) elem0))))   ;FA-Const-of-Cons__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Cons) (Subclass (Tag (Cons__next self)) Env))))
+(assert (forall ((var0 Int) (elem0 Object) (next0 Object) (var1 Int) (elem1 Object) (next1 Object)) (=> (and (and (Subclass (Tag elem0) Type) (Subclass (Tag next0) Env) ) (and (Subclass (Tag elem1) Type) (Subclass (Tag next1) Env) ) ) (=> (= (Cons__Ctor var0 elem0 next0) (Cons__Ctor var1 elem1 next1)) (= next0 next1))  )))
+(assert (forall ((var0 Int) (elem0 Object) (next0 Object)) (=> (and (Subclass (Tag elem0) Type) (Subclass (Tag next0) Env) ) (= (Cons__next (Cons__Ctor var0 elem0 next0)) next0))))   ;FA-Const-of-Cons__Ctor
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Cons) ) (= (Cons__contains self x) (ite (= x (Cons__var self)) true (Env__contains (Cons__next self) x))))))   ;Transfer-Const-of-Cons__contains
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Cons) ) (= (Cons__contains self x) (Env__contains self x)))))   ;Inherit-Const-of-Cons__contains
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Cons) ) (= (Cons__get self x) (ite (= x (Cons__var self)) (Cons__elem self) (Env__get (Cons__next self) x))))))   ;Transfer-Const-of-Cons__get
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Cons) ) (Subclass (Tag (Cons__get self x)) Type))))
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Cons) ) (= (Cons__get self x) (Env__get self x)))))   ;Inherit-Const-of-Cons__get
+(assert (forall ((self Object) (x Int) (t Object) (y Int)) (=> (and (Subclass (Tag self) Cons) (Subclass (Tag t) Type) ) (= (Cons__weaken self x t y) true))))   ;Transfer-Const-of-Cons__weaken
+(assert (forall ((self Object) (x Int) (t Object) (y Int)) (=> (and (Subclass (Tag self) Cons) (Subclass (Tag t) Type) ) (= (Cons__weaken self x t y) (Env__weaken self x t y)))))   ;Inherit-Const-of-Cons__weaken
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Cons) ) (= (Cons__contains__IMP self x) (ite (= x (Cons__var self)) true (Env__contains (Cons__next self) x))))))   ;Implementation-Const-of-Cons__contains__IMP
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Cons) ) (= (Cons__get__IMP self x) (ite (= x (Cons__var self)) (Cons__elem self) (Env__get (Cons__next self) x))))))   ;Implementation-Const-of-Cons__get__IMP
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Cons) ) (Subclass (Tag (Cons__get__IMP self x)) Type))))   ;ImplementationRet-Const-of-Cons__get__IMP
+(assert (forall ((self Object) (x Int) (t Object) (y Int)) (=> (and (Subclass (Tag self) Cons) (Subclass (Tag t) Type) ) (= (Cons__weaken__IMP self x t y) true))))   ;Implementation-Const-of-Cons__weaken__IMP
+(assert (forall ((self Object)) (=> (Subclass (Tag self) Nil) (or (= self Nil__Ctor) )) ))   ;Generatedness-Const-of-Nil__Ctor
+(assert (=> true (Subclass (Tag Nil__Ctor ) Nil)))   ;TagCtor-Const-of-Nil__Ctor
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Nil) ) (= (Nil__contains self x) false))))   ;Transfer-Const-of-Nil__contains
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Nil) ) (= (Nil__contains self x) (Env__contains self x)))))   ;Inherit-Const-of-Nil__contains
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Nil) ) (= (Nil__get self x) noType__Ctor))))   ;Transfer-Const-of-Nil__get
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Nil) ) (Subclass (Tag (Nil__get self x)) Type))))
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Nil) ) (= (Nil__get self x) (Env__get self x)))))   ;Inherit-Const-of-Nil__get
+(assert (forall ((self Object) (x Int) (t Object) (y Int)) (=> (and (Subclass (Tag self) Env) (Subclass (Tag t) Type) ) (= (Nil__weaken self x t y) true))))   ;Transfer-Const-of-Nil__weaken
+(assert (forall ((self Object) (x Int) (t Object) (y Int)) (=> (and (Subclass (Tag self) Env) (Subclass (Tag t) Type) ) (= (Nil__weaken self x t y) (Env__weaken self x t y)))))   ;Inherit-Const-of-Nil__weaken
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Nil) ) (= (Nil__contains__IMP self x) false))))   ;Implementation-Const-of-Nil__contains__IMP
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Nil) ) (= (Nil__get__IMP self x) noType__Ctor))))   ;Implementation-Const-of-Nil__get__IMP
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) Nil) ) (Subclass (Tag (Nil__get__IMP self x)) Type))))   ;ImplementationRet-Const-of-Nil__get__IMP
+(assert (forall ((self Object) (x Int) (t Object) (y Int)) (=> (and (Subclass (Tag self) Env) (Subclass (Tag t) Type) ) (= (Nil__weaken__IMP self x t y) true))))   ;Implementation-Const-of-Nil__weaken__IMP
+(assert (forall ((self Object)) (=> (Subclass (Tag self) HP) (or (exists ((gamma Object) (e Object) (tau Object)) (and (and (Subclass (Tag gamma) Env) (Subclass (Tag e) Expr) (Subclass (Tag tau) Type) ) (= self (HP__Ctor gamma e tau)))) )) ))   ;Generatedness-Const-of-HP__Ctor
+(assert (forall ((gamma0 Object) (e0 Object) (tau0 Object)) (=> (and (Subclass (Tag gamma0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag tau0) Type) ) (Subclass (Tag (HP__Ctor gamma0 e0 tau0)) HP))))   ;TagCtor-Const-of-HP__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) HP) (Subclass (Tag (HP__gamma self)) Env))))
+(assert (forall ((gamma0 Object) (e0 Object) (tau0 Object) (gamma1 Object) (e1 Object) (tau1 Object)) (=> (and (and (Subclass (Tag gamma0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag tau0) Type) ) (and (Subclass (Tag gamma1) Env) (Subclass (Tag e1) Expr) (Subclass (Tag tau1) Type) ) ) (=> (= (HP__Ctor gamma0 e0 tau0) (HP__Ctor gamma1 e1 tau1)) (= gamma0 gamma1))  )))
+(assert (forall ((gamma0 Object) (e0 Object) (tau0 Object)) (=> (and (Subclass (Tag gamma0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag tau0) Type) ) (= (HP__gamma (HP__Ctor gamma0 e0 tau0)) gamma0))))   ;FA-Const-of-HP__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) HP) (Subclass (Tag (HP__e self)) Expr))))
+(assert (forall ((gamma0 Object) (e0 Object) (tau0 Object) (gamma1 Object) (e1 Object) (tau1 Object)) (=> (and (and (Subclass (Tag gamma0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag tau0) Type) ) (and (Subclass (Tag gamma1) Env) (Subclass (Tag e1) Expr) (Subclass (Tag tau1) Type) ) ) (=> (= (HP__Ctor gamma0 e0 tau0) (HP__Ctor gamma1 e1 tau1)) (= e0 e1))  )))
+(assert (forall ((gamma0 Object) (e0 Object) (tau0 Object)) (=> (and (Subclass (Tag gamma0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag tau0) Type) ) (= (HP__e (HP__Ctor gamma0 e0 tau0)) e0))))   ;FA-Const-of-HP__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) HP) (Subclass (Tag (HP__tau self)) Type))))
+(assert (forall ((gamma0 Object) (e0 Object) (tau0 Object) (gamma1 Object) (e1 Object) (tau1 Object)) (=> (and (and (Subclass (Tag gamma0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag tau0) Type) ) (and (Subclass (Tag gamma1) Env) (Subclass (Tag e1) Expr) (Subclass (Tag tau1) Type) ) ) (=> (= (HP__Ctor gamma0 e0 tau0) (HP__Ctor gamma1 e1 tau1)) (= tau0 tau1))  )))
+(assert (forall ((gamma0 Object) (e0 Object) (tau0 Object)) (=> (and (Subclass (Tag gamma0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag tau0) Type) ) (= (HP__tau (HP__Ctor gamma0 e0 tau0)) tau0))))   ;FA-Const-of-HP__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) HasType) (or (exists ((g Object) (x Int)) (and (and (Subclass (Tag g) Env) ) (= self (TVar__Ctor g x)))) (exists ((g Object) (x Int) (e Object) (t1 Object) (t2 Object) (te Object)) (and (and (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t1) Type) (Subclass (Tag t2) Type) (Subclass (Tag te) HasType) ) (= self (TAbs__Ctor g x e t1 t2 te)))) (exists ((g Object) (e1 Object) (e2 Object) (t1 Object) (t2 Object) (Te1 Object) (Te2 Object)) (and (and (Subclass (Tag g) Env) (Subclass (Tag e1) Expr) (Subclass (Tag e2) Expr) (Subclass (Tag t1) Type) (Subclass (Tag t2) Type) (Subclass (Tag Te1) HasType) (Subclass (Tag Te2) HasType) ) (= self (TApp__Ctor g e1 e2 t1 t2 Te1 Te2)))) )) ))   ;Generatedness-Const-of-HasType__Ctor
+(assert (and (forall ((self Object) (x Int)(g0 Object) (x0 Int)) (=> (and (and (Subclass (Tag g0) Env) ) (= self (TVar__Ctor g0 x0))) (= (HasType__fresh self x) (not (= x (TVar__x self)))))) (forall ((self Object) (x Int)(g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (= self (TAbs__Ctor g0 x0 e0 t10 t20 te0))) (= (HasType__fresh self x) (HasType__fresh (TAbs__te self) x)))) (forall ((self Object) (x Int)(g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (= self (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20))) (= (HasType__fresh self x) (and (HasType__fresh (TApp__Te1 self) x) (HasType__fresh (TApp__Te2 self) x))))) ))   ;Transfer-Const-of-HasType__fresh
+(assert (and (forall ((self Object)(g0 Object) (x0 Int)) (=> (and (and (Subclass (Tag g0) Env) ) (= self (TVar__Ctor g0 x0))) (= (HasType__prop self) (HP__Ctor (TVar__g self) (FV__Ctor (TVar__x self)) (Env__get (TVar__g self) (TVar__x self)))))) (forall ((self Object)(g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (= self (TAbs__Ctor g0 x0 e0 t10 t20 te0))) (= (HasType__prop self) (HP__Ctor (TAbs__g self) (Lambda__Ctor (TAbs__x self) (TAbs__e self)) (Arrow__Ctor (TAbs__t1 self) (TAbs__t2 self)))))) (forall ((self Object)(g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (= self (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20))) (= (HasType__prop self) (let ((gg (TApp__g self))) (let ((ee1 (TApp__e1 self))) (let ((ee2 (TApp__e2 self))) (let ((tt2 (TApp__t2 self))) (let ((aa (App__Ctor ee1 ee2))) (HP__Ctor gg aa tt2))))))))) ))   ;Transfer-Const-of-HasType__prop
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) HasType) ) (Subclass (Tag (HasType__prop self)) HP))))   ;TransferRet-Const-of-HasType__prop__IMP
+(assert true)   ;Transfer-Const-of-HasType__permutate
+(assert (forall ((self Object) (x1 Int) (t1 Object) (x2 Int) (t2 Object) (g_ Object) (e Object) (t Object)) (=> (and (Subclass (Tag self) HasType) (Subclass (Tag t1) Type) (Subclass (Tag t2) Type) (Subclass (Tag g_) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) ) (Subclass (Tag (HasType__permutate self x1 t1 x2 t2 g_ e t)) HasType))))   ;TransferRet-Const-of-HasType__permutate__IMP
+(assert (and (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)(g0 Object) (x0 Int)) (=> (and (and (Subclass (Tag g0) Env) ) (= self (TVar__Ctor g0 x0))) (= (HasType__weaken self g e t x t2) (let ((_ (TVar__x self))) (TVar__Ctor (Cons__Ctor x t2 g) (TVar__x self)))))) (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)(g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (= self (TAbs__Ctor g0 x0 e0 t10 t20 te0))) (= (HasType__weaken self g e t x t2) (let ((te (TAbs__te self))) (let ((te1 (HasType__weaken te (Cons__Ctor (TAbs__x self) (TAbs__t1 self) (TAbs__g self)) (TAbs__e self) (TAbs__t2 self) x t2))) (let ((te2 (HasType__permutate te1 (TAbs__x self) (TAbs__t1 self) x t2 (TAbs__g self) (TAbs__e self) (TAbs__t2 self)))) (TAbs__Ctor (Cons__Ctor x t2 g) (TAbs__x self) (TAbs__e self) (TAbs__t1 self) (TAbs__t2 self) te2))))))) (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)(g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (= self (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20))) (= (HasType__weaken self g e t x t2) (let ((Tee1 (TApp__Te1 self))) (let ((Tee2 (TApp__Te2 self))) (let ((tt (Arrow__Ctor (TApp__t1 self) (TApp__t2 self)))) (let ((Te1_ (HasType__weaken (TApp__Te1 self) (TApp__g self) (TApp__e1 self) tt x t2))) (let ((Te2_ (HasType__weaken (TApp__Te2 self) (TApp__g self) (TApp__e2 self) (TApp__t1 self) x t2))) (TApp__Ctor (Cons__Ctor x t2 (TApp__g self)) (TApp__e1 self) (TApp__e2 self) (TApp__t1 self) (TApp__t2 self) Te1_ Te2_))))))))) ))   ;Transfer-Const-of-HasType__weaken
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) HasType) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (Subclass (Tag (HasType__weaken self g e t x t2)) HasType))))   ;TransferRet-Const-of-HasType__weaken__IMP
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TVar) (or (exists ((g Object) (x Int)) (and (and (Subclass (Tag g) Env) ) (= self (TVar__Ctor g x)))) )) ))   ;Generatedness-Const-of-TVar__Ctor
+(assert (forall ((g0 Object) (x0 Int)) (=> (and (Subclass (Tag g0) Env) ) (Subclass (Tag (TVar__Ctor g0 x0)) TVar))))   ;TagCtor-Const-of-TVar__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TVar) (Subclass (Tag (TVar__g self)) Env))))
+(assert (forall ((g0 Object) (x0 Int) (g1 Object) (x1 Int)) (=> (and (and (Subclass (Tag g0) Env) ) (and (Subclass (Tag g1) Env) ) ) (=> (= (TVar__Ctor g0 x0) (TVar__Ctor g1 x1)) (= g0 g1))  )))
+(assert (forall ((g0 Object) (x0 Int)) (=> (and (Subclass (Tag g0) Env) ) (= (TVar__g (TVar__Ctor g0 x0)) g0))))   ;FA-Const-of-TVar__Ctor
+(assert (forall ((g0 Object) (x0 Int) (g1 Object) (x1 Int)) (=> (and (and (Subclass (Tag g0) Env) ) (and (Subclass (Tag g1) Env) ) ) (=> (= (TVar__Ctor g0 x0) (TVar__Ctor g1 x1)) (= x0 x1))  )))
+(assert (forall ((g0 Object) (x0 Int)) (=> (and (Subclass (Tag g0) Env) ) (= (TVar__x (TVar__Ctor g0 x0)) x0))))   ;FA-Const-of-TVar__Ctor
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) TVar) ) (= (TVar__fresh self x) (not (= x (TVar__x self)))))))   ;Transfer-Const-of-TVar__fresh
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) TVar) ) (= (TVar__fresh self x) (HasType__fresh self x)))))   ;Inherit-Const-of-TVar__fresh
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TVar) ) (= (TVar__prop self) (HP__Ctor (TVar__g self) (FV__Ctor (TVar__x self)) (Env__get (TVar__g self) (TVar__x self)))))))   ;Transfer-Const-of-TVar__prop
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TVar) ) (Subclass (Tag (TVar__prop self)) HP))))
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TVar) ) (= (TVar__prop self) (HasType__prop self)))))   ;Inherit-Const-of-TVar__prop
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TVar) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (= (TVar__weaken self g e t x t2) (let ((_ (TVar__x self))) (TVar__Ctor (Cons__Ctor x t2 g) (TVar__x self)))))))   ;Transfer-Const-of-TVar__weaken
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TVar) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (Subclass (Tag (TVar__weaken self g e t x t2)) HasType))))
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TVar) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (= (TVar__weaken self g e t x t2) (HasType__weaken self g e t x t2)))))   ;Inherit-Const-of-TVar__weaken
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) TVar) ) (= (TVar__fresh__IMP self x) (not (= x (TVar__x self)))))))   ;Implementation-Const-of-TVar__fresh__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TVar) ) (= (TVar__prop__IMP self) (HP__Ctor (TVar__g self) (FV__Ctor (TVar__x self)) (Env__get (TVar__g self) (TVar__x self)))))))   ;Implementation-Const-of-TVar__prop__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TVar) ) (Subclass (Tag (TVar__prop__IMP self)) HP))))   ;ImplementationRet-Const-of-TVar__prop__IMP
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TVar) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (= (TVar__weaken__IMP self g e t x t2) (let ((_ (TVar__x self))) (TVar__Ctor (Cons__Ctor x t2 g) (TVar__x self)))))))   ;Implementation-Const-of-TVar__weaken__IMP
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TVar) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (Subclass (Tag (TVar__weaken__IMP self g e t x t2)) HasType))))   ;ImplementationRet-Const-of-TVar__weaken__IMP
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TAbs) (or (exists ((g Object) (x Int) (e Object) (t1 Object) (t2 Object) (te Object)) (and (and (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t1) Type) (Subclass (Tag t2) Type) (Subclass (Tag te) HasType) ) (= self (TAbs__Ctor g x e t1 t2 te)))) )) ))   ;Generatedness-Const-of-TAbs__Ctor
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (Subclass (Tag (TAbs__Ctor g0 x0 e0 t10 t20 te0)) TAbs))))   ;TagCtor-Const-of-TAbs__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TAbs) (Subclass (Tag (TAbs__g self)) Env))))
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object) (g1 Object) (x1 Int) (e1 Object) (t11 Object) (t21 Object) (te1 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e1) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag te1) HasType) ) ) (=> (= (TAbs__Ctor g0 x0 e0 t10 t20 te0) (TAbs__Ctor g1 x1 e1 t11 t21 te1)) (= g0 g1))  )))
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (= (TAbs__g (TAbs__Ctor g0 x0 e0 t10 t20 te0)) g0))))   ;FA-Const-of-TAbs__Ctor
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object) (g1 Object) (x1 Int) (e1 Object) (t11 Object) (t21 Object) (te1 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e1) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag te1) HasType) ) ) (=> (= (TAbs__Ctor g0 x0 e0 t10 t20 te0) (TAbs__Ctor g1 x1 e1 t11 t21 te1)) (= x0 x1))  )))
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (= (TAbs__x (TAbs__Ctor g0 x0 e0 t10 t20 te0)) x0))))   ;FA-Const-of-TAbs__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TAbs) (Subclass (Tag (TAbs__e self)) Expr))))
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object) (g1 Object) (x1 Int) (e1 Object) (t11 Object) (t21 Object) (te1 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e1) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag te1) HasType) ) ) (=> (= (TAbs__Ctor g0 x0 e0 t10 t20 te0) (TAbs__Ctor g1 x1 e1 t11 t21 te1)) (= e0 e1))  )))
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (= (TAbs__e (TAbs__Ctor g0 x0 e0 t10 t20 te0)) e0))))   ;FA-Const-of-TAbs__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TAbs) (Subclass (Tag (TAbs__t1 self)) Type))))
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object) (g1 Object) (x1 Int) (e1 Object) (t11 Object) (t21 Object) (te1 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e1) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag te1) HasType) ) ) (=> (= (TAbs__Ctor g0 x0 e0 t10 t20 te0) (TAbs__Ctor g1 x1 e1 t11 t21 te1)) (= t10 t11))  )))
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (= (TAbs__t1 (TAbs__Ctor g0 x0 e0 t10 t20 te0)) t10))))   ;FA-Const-of-TAbs__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TAbs) (Subclass (Tag (TAbs__t2 self)) Type))))
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object) (g1 Object) (x1 Int) (e1 Object) (t11 Object) (t21 Object) (te1 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e1) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag te1) HasType) ) ) (=> (= (TAbs__Ctor g0 x0 e0 t10 t20 te0) (TAbs__Ctor g1 x1 e1 t11 t21 te1)) (= t20 t21))  )))
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (= (TAbs__t2 (TAbs__Ctor g0 x0 e0 t10 t20 te0)) t20))))   ;FA-Const-of-TAbs__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TAbs) (Subclass (Tag (TAbs__te self)) HasType))))
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object) (g1 Object) (x1 Int) (e1 Object) (t11 Object) (t21 Object) (te1 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e1) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag te1) HasType) ) ) (=> (= (TAbs__Ctor g0 x0 e0 t10 t20 te0) (TAbs__Ctor g1 x1 e1 t11 t21 te1)) (= te0 te1))  )))
+(assert (forall ((g0 Object) (x0 Int) (e0 Object) (t10 Object) (t20 Object) (te0 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e0) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag te0) HasType) ) (= (TAbs__te (TAbs__Ctor g0 x0 e0 t10 t20 te0)) te0))))   ;FA-Const-of-TAbs__Ctor
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) TAbs) ) (= (TAbs__fresh self x) (HasType__fresh (TAbs__te self) x)))))   ;Transfer-Const-of-TAbs__fresh
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) TAbs) ) (= (TAbs__fresh self x) (HasType__fresh self x)))))   ;Inherit-Const-of-TAbs__fresh
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TAbs) ) (= (TAbs__prop self) (HP__Ctor (TAbs__g self) (Lambda__Ctor (TAbs__x self) (TAbs__e self)) (Arrow__Ctor (TAbs__t1 self) (TAbs__t2 self)))))))   ;Transfer-Const-of-TAbs__prop
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TAbs) ) (Subclass (Tag (TAbs__prop self)) HP))))
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TAbs) ) (= (TAbs__prop self) (HasType__prop self)))))   ;Inherit-Const-of-TAbs__prop
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TAbs) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (= (TAbs__weaken self g e t x t2) (let ((te (TAbs__te self))) (let ((te1 (HasType__weaken te (Cons__Ctor (TAbs__x self) (TAbs__t1 self) (TAbs__g self)) (TAbs__e self) (TAbs__t2 self) x t2))) (let ((te2 (HasType__permutate te1 (TAbs__x self) (TAbs__t1 self) x t2 (TAbs__g self) (TAbs__e self) (TAbs__t2 self)))) (TAbs__Ctor (Cons__Ctor x t2 g) (TAbs__x self) (TAbs__e self) (TAbs__t1 self) (TAbs__t2 self) te2))))))))   ;Transfer-Const-of-TAbs__weaken
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TAbs) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (Subclass (Tag (TAbs__weaken self g e t x t2)) HasType))))
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TAbs) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (= (TAbs__weaken self g e t x t2) (HasType__weaken self g e t x t2)))))   ;Inherit-Const-of-TAbs__weaken
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) TAbs) ) (= (TAbs__fresh__IMP self x) (HasType__fresh (TAbs__te self) x)))))   ;Implementation-Const-of-TAbs__fresh__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TAbs) ) (= (TAbs__prop__IMP self) (HP__Ctor (TAbs__g self) (Lambda__Ctor (TAbs__x self) (TAbs__e self)) (Arrow__Ctor (TAbs__t1 self) (TAbs__t2 self)))))))   ;Implementation-Const-of-TAbs__prop__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TAbs) ) (Subclass (Tag (TAbs__prop__IMP self)) HP))))   ;ImplementationRet-Const-of-TAbs__prop__IMP
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TAbs) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (= (TAbs__weaken__IMP self g e t x t2) (let ((te (TAbs__te self))) (let ((te1 (HasType__weaken te (Cons__Ctor (TAbs__x self) (TAbs__t1 self) (TAbs__g self)) (TAbs__e self) (TAbs__t2 self) x t2))) (let ((te2 (HasType__permutate te1 (TAbs__x self) (TAbs__t1 self) x t2 (TAbs__g self) (TAbs__e self) (TAbs__t2 self)))) (TAbs__Ctor (Cons__Ctor x t2 g) (TAbs__x self) (TAbs__e self) (TAbs__t1 self) (TAbs__t2 self) te2))))))))   ;Implementation-Const-of-TAbs__weaken__IMP
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TAbs) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (Subclass (Tag (TAbs__weaken__IMP self g e t x t2)) HasType))))   ;ImplementationRet-Const-of-TAbs__weaken__IMP
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TApp) (or (exists ((g Object) (e1 Object) (e2 Object) (t1 Object) (t2 Object) (Te1 Object) (Te2 Object)) (and (and (Subclass (Tag g) Env) (Subclass (Tag e1) Expr) (Subclass (Tag e2) Expr) (Subclass (Tag t1) Type) (Subclass (Tag t2) Type) (Subclass (Tag Te1) HasType) (Subclass (Tag Te2) HasType) ) (= self (TApp__Ctor g e1 e2 t1 t2 Te1 Te2)))) )) ))   ;Generatedness-Const-of-TApp__Ctor
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (Subclass (Tag (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20)) TApp))))   ;TagCtor-Const-of-TApp__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TApp) (Subclass (Tag (TApp__g self)) Env))))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object) (g1 Object) (e11 Object) (e21 Object) (t11 Object) (t21 Object) (Te11 Object) (Te21 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e11) Expr) (Subclass (Tag e21) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag Te11) HasType) (Subclass (Tag Te21) HasType) ) ) (=> (= (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20) (TApp__Ctor g1 e11 e21 t11 t21 Te11 Te21)) (= g0 g1))  )))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (= (TApp__g (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20)) g0))))   ;FA-Const-of-TApp__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TApp) (Subclass (Tag (TApp__e1 self)) Expr))))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object) (g1 Object) (e11 Object) (e21 Object) (t11 Object) (t21 Object) (Te11 Object) (Te21 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e11) Expr) (Subclass (Tag e21) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag Te11) HasType) (Subclass (Tag Te21) HasType) ) ) (=> (= (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20) (TApp__Ctor g1 e11 e21 t11 t21 Te11 Te21)) (= e10 e11))  )))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (= (TApp__e1 (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20)) e10))))   ;FA-Const-of-TApp__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TApp) (Subclass (Tag (TApp__e2 self)) Expr))))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object) (g1 Object) (e11 Object) (e21 Object) (t11 Object) (t21 Object) (Te11 Object) (Te21 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e11) Expr) (Subclass (Tag e21) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag Te11) HasType) (Subclass (Tag Te21) HasType) ) ) (=> (= (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20) (TApp__Ctor g1 e11 e21 t11 t21 Te11 Te21)) (= e20 e21))  )))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (= (TApp__e2 (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20)) e20))))   ;FA-Const-of-TApp__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TApp) (Subclass (Tag (TApp__t1 self)) Type))))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object) (g1 Object) (e11 Object) (e21 Object) (t11 Object) (t21 Object) (Te11 Object) (Te21 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e11) Expr) (Subclass (Tag e21) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag Te11) HasType) (Subclass (Tag Te21) HasType) ) ) (=> (= (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20) (TApp__Ctor g1 e11 e21 t11 t21 Te11 Te21)) (= t10 t11))  )))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (= (TApp__t1 (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20)) t10))))   ;FA-Const-of-TApp__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TApp) (Subclass (Tag (TApp__t2 self)) Type))))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object) (g1 Object) (e11 Object) (e21 Object) (t11 Object) (t21 Object) (Te11 Object) (Te21 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e11) Expr) (Subclass (Tag e21) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag Te11) HasType) (Subclass (Tag Te21) HasType) ) ) (=> (= (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20) (TApp__Ctor g1 e11 e21 t11 t21 Te11 Te21)) (= t20 t21))  )))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (= (TApp__t2 (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20)) t20))))   ;FA-Const-of-TApp__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TApp) (Subclass (Tag (TApp__Te1 self)) HasType))))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object) (g1 Object) (e11 Object) (e21 Object) (t11 Object) (t21 Object) (Te11 Object) (Te21 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e11) Expr) (Subclass (Tag e21) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag Te11) HasType) (Subclass (Tag Te21) HasType) ) ) (=> (= (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20) (TApp__Ctor g1 e11 e21 t11 t21 Te11 Te21)) (= Te10 Te11))  )))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (= (TApp__Te1 (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20)) Te10))))   ;FA-Const-of-TApp__Ctor
+(assert (forall ((self Object)) (=> (Subclass (Tag self) TApp) (Subclass (Tag (TApp__Te2 self)) HasType))))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object) (g1 Object) (e11 Object) (e21 Object) (t11 Object) (t21 Object) (Te11 Object) (Te21 Object)) (=> (and (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (and (Subclass (Tag g1) Env) (Subclass (Tag e11) Expr) (Subclass (Tag e21) Expr) (Subclass (Tag t11) Type) (Subclass (Tag t21) Type) (Subclass (Tag Te11) HasType) (Subclass (Tag Te21) HasType) ) ) (=> (= (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20) (TApp__Ctor g1 e11 e21 t11 t21 Te11 Te21)) (= Te20 Te21))  )))
+(assert (forall ((g0 Object) (e10 Object) (e20 Object) (t10 Object) (t20 Object) (Te10 Object) (Te20 Object)) (=> (and (Subclass (Tag g0) Env) (Subclass (Tag e10) Expr) (Subclass (Tag e20) Expr) (Subclass (Tag t10) Type) (Subclass (Tag t20) Type) (Subclass (Tag Te10) HasType) (Subclass (Tag Te20) HasType) ) (= (TApp__Te2 (TApp__Ctor g0 e10 e20 t10 t20 Te10 Te20)) Te20))))   ;FA-Const-of-TApp__Ctor
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) TApp) ) (= (TApp__fresh self x) (and (HasType__fresh (TApp__Te1 self) x) (HasType__fresh (TApp__Te2 self) x))))))   ;Transfer-Const-of-TApp__fresh
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) TApp) ) (= (TApp__fresh self x) (HasType__fresh self x)))))   ;Inherit-Const-of-TApp__fresh
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TApp) ) (= (TApp__prop self) (let ((gg (TApp__g self))) (let ((ee1 (TApp__e1 self))) (let ((ee2 (TApp__e2 self))) (let ((tt2 (TApp__t2 self))) (let ((aa (App__Ctor ee1 ee2))) (HP__Ctor gg aa tt2))))))))))   ;Transfer-Const-of-TApp__prop
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TApp) ) (Subclass (Tag (TApp__prop self)) HP))))
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TApp) ) (= (TApp__prop self) (HasType__prop self)))))   ;Inherit-Const-of-TApp__prop
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TApp) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (= (TApp__weaken self g e t x t2) (let ((Tee1 (TApp__Te1 self))) (let ((Tee2 (TApp__Te2 self))) (let ((tt (Arrow__Ctor (TApp__t1 self) (TApp__t2 self)))) (let ((Te1_ (HasType__weaken (TApp__Te1 self) (TApp__g self) (TApp__e1 self) tt x t2))) (let ((Te2_ (HasType__weaken (TApp__Te2 self) (TApp__g self) (TApp__e2 self) (TApp__t1 self) x t2))) (TApp__Ctor (Cons__Ctor x t2 (TApp__g self)) (TApp__e1 self) (TApp__e2 self) (TApp__t1 self) (TApp__t2 self) Te1_ Te2_))))))))))   ;Transfer-Const-of-TApp__weaken
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TApp) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (Subclass (Tag (TApp__weaken self g e t x t2)) HasType))))
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TApp) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (= (TApp__weaken self g e t x t2) (HasType__weaken self g e t x t2)))))   ;Inherit-Const-of-TApp__weaken
+(assert (forall ((self Object) (x Int)) (=> (and (Subclass (Tag self) TApp) ) (= (TApp__fresh__IMP self x) (and (HasType__fresh (TApp__Te1 self) x) (HasType__fresh (TApp__Te2 self) x))))))   ;Implementation-Const-of-TApp__fresh__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TApp) ) (= (TApp__prop__IMP self) (let ((gg (TApp__g self))) (let ((ee1 (TApp__e1 self))) (let ((ee2 (TApp__e2 self))) (let ((tt2 (TApp__t2 self))) (let ((aa (App__Ctor ee1 ee2))) (HP__Ctor gg aa tt2))))))))))   ;Implementation-Const-of-TApp__prop__IMP
+(assert (forall ((self Object)) (=> (and (Subclass (Tag self) TApp) ) (Subclass (Tag (TApp__prop__IMP self)) HP))))   ;ImplementationRet-Const-of-TApp__prop__IMP
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TApp) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (= (TApp__weaken__IMP self g e t x t2) (let ((Tee1 (TApp__Te1 self))) (let ((Tee2 (TApp__Te2 self))) (let ((tt (Arrow__Ctor (TApp__t1 self) (TApp__t2 self)))) (let ((Te1_ (HasType__weaken (TApp__Te1 self) (TApp__g self) (TApp__e1 self) tt x t2))) (let ((Te2_ (HasType__weaken (TApp__Te2 self) (TApp__g self) (TApp__e2 self) (TApp__t1 self) x t2))) (TApp__Ctor (Cons__Ctor x t2 (TApp__g self)) (TApp__e1 self) (TApp__e2 self) (TApp__t1 self) (TApp__t2 self) Te1_ Te2_))))))))))   ;Implementation-Const-of-TApp__weaken__IMP
+(assert (forall ((self Object) (g Object) (e Object) (t Object) (x Int) (t2 Object)) (=> (and (Subclass (Tag self) TApp) (Subclass (Tag g) Env) (Subclass (Tag e) Expr) (Subclass (Tag t) Type) (Subclass (Tag t2) Type) ) (Subclass (Tag (TApp__weaken__IMP self g e t x t2)) HasType))))   ;ImplementationRet-Const-of-TApp__weaken__IMP
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object)) (not (= (Lambda__Ctor v0 v1) (App__Ctor v2 v3)))))   ;Discrimiate-Const-of-Lambda__App
+(assert (forall ((v0 Int) (v1 Object) (v2 Int)) (not (= (Lambda__Ctor v0 v1) (FV__Ctor v2)))))   ;Discrimiate-Const-of-Lambda__FV
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object)) (not (= (Lambda__Ctor v0 v1) (Arrow__Ctor v2 v3)))))   ;Discrimiate-Const-of-Lambda__Arrow
+(assert (forall ((v0 Int) (v1 Object)) (not (= (Lambda__Ctor v0 v1) noType__Ctor))))   ;Discrimiate-Const-of-Lambda__noType
+(assert (forall ((v0 Int) (v1 Object) (v2 Int) (v3 Object) (v4 Object)) (not (= (Lambda__Ctor v0 v1) (Cons__Ctor v2 v3 v4)))))   ;Discrimiate-Const-of-Lambda__Cons
+(assert (forall ((v0 Int) (v1 Object)) (not (= (Lambda__Ctor v0 v1) Nil__Ctor))))   ;Discrimiate-Const-of-Lambda__Nil
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object) (v4 Object)) (not (= (Lambda__Ctor v0 v1) (HP__Ctor v2 v3 v4)))))   ;Discrimiate-Const-of-Lambda__HP
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Int)) (not (= (Lambda__Ctor v0 v1) (TVar__Ctor v2 v3)))))   ;Discrimiate-Const-of-Lambda__TVar
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Int) (v4 Object) (v5 Object) (v6 Object) (v7 Object)) (not (= (Lambda__Ctor v0 v1) (TAbs__Ctor v2 v3 v4 v5 v6 v7)))))   ;Discrimiate-Const-of-Lambda__TAbs
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Object)) (not (= (Lambda__Ctor v0 v1) (TApp__Ctor v2 v3 v4 v5 v6 v7 v8)))))   ;Discrimiate-Const-of-Lambda__TApp
+(assert (forall ((v0 Object) (v1 Object) (v2 Int) (v3 Object)) (not (= (App__Ctor v0 v1) (Lambda__Ctor v2 v3)))))   ;Discrimiate-Const-of-App__Lambda
+(assert (forall ((v0 Object) (v1 Object) (v2 Int)) (not (= (App__Ctor v0 v1) (FV__Ctor v2)))))   ;Discrimiate-Const-of-App__FV
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object)) (not (= (App__Ctor v0 v1) (Arrow__Ctor v2 v3)))))   ;Discrimiate-Const-of-App__Arrow
+(assert (forall ((v0 Object) (v1 Object)) (not (= (App__Ctor v0 v1) noType__Ctor))))   ;Discrimiate-Const-of-App__noType
+(assert (forall ((v0 Object) (v1 Object) (v2 Int) (v3 Object) (v4 Object)) (not (= (App__Ctor v0 v1) (Cons__Ctor v2 v3 v4)))))   ;Discrimiate-Const-of-App__Cons
+(assert (forall ((v0 Object) (v1 Object)) (not (= (App__Ctor v0 v1) Nil__Ctor))))   ;Discrimiate-Const-of-App__Nil
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object)) (not (= (App__Ctor v0 v1) (HP__Ctor v2 v3 v4)))))   ;Discrimiate-Const-of-App__HP
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Int)) (not (= (App__Ctor v0 v1) (TVar__Ctor v2 v3)))))   ;Discrimiate-Const-of-App__TVar
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Int) (v4 Object) (v5 Object) (v6 Object) (v7 Object)) (not (= (App__Ctor v0 v1) (TAbs__Ctor v2 v3 v4 v5 v6 v7)))))   ;Discrimiate-Const-of-App__TAbs
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Object)) (not (= (App__Ctor v0 v1) (TApp__Ctor v2 v3 v4 v5 v6 v7 v8)))))   ;Discrimiate-Const-of-App__TApp
+(assert (forall ((v0 Int) (v1 Int) (v2 Object)) (not (= (FV__Ctor v0) (Lambda__Ctor v1 v2)))))   ;Discrimiate-Const-of-FV__Lambda
+(assert (forall ((v0 Int) (v1 Object) (v2 Object)) (not (= (FV__Ctor v0) (App__Ctor v1 v2)))))   ;Discrimiate-Const-of-FV__App
+(assert (forall ((v0 Int) (v1 Object) (v2 Object)) (not (= (FV__Ctor v0) (Arrow__Ctor v1 v2)))))   ;Discrimiate-Const-of-FV__Arrow
+(assert (forall ((v0 Int)) (not (= (FV__Ctor v0) noType__Ctor))))   ;Discrimiate-Const-of-FV__noType
+(assert (forall ((v0 Int) (v1 Int) (v2 Object) (v3 Object)) (not (= (FV__Ctor v0) (Cons__Ctor v1 v2 v3)))))   ;Discrimiate-Const-of-FV__Cons
+(assert (forall ((v0 Int)) (not (= (FV__Ctor v0) Nil__Ctor))))   ;Discrimiate-Const-of-FV__Nil
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object)) (not (= (FV__Ctor v0) (HP__Ctor v1 v2 v3)))))   ;Discrimiate-Const-of-FV__HP
+(assert (forall ((v0 Int) (v1 Object) (v2 Int)) (not (= (FV__Ctor v0) (TVar__Ctor v1 v2)))))   ;Discrimiate-Const-of-FV__TVar
+(assert (forall ((v0 Int) (v1 Object) (v2 Int) (v3 Object) (v4 Object) (v5 Object) (v6 Object)) (not (= (FV__Ctor v0) (TAbs__Ctor v1 v2 v3 v4 v5 v6)))))   ;Discrimiate-Const-of-FV__TAbs
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object)) (not (= (FV__Ctor v0) (TApp__Ctor v1 v2 v3 v4 v5 v6 v7)))))   ;Discrimiate-Const-of-FV__TApp
+(assert (forall ((v0 Object) (v1 Object) (v2 Int) (v3 Object)) (not (= (Arrow__Ctor v0 v1) (Lambda__Ctor v2 v3)))))   ;Discrimiate-Const-of-Arrow__Lambda
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object)) (not (= (Arrow__Ctor v0 v1) (App__Ctor v2 v3)))))   ;Discrimiate-Const-of-Arrow__App
+(assert (forall ((v0 Object) (v1 Object) (v2 Int)) (not (= (Arrow__Ctor v0 v1) (FV__Ctor v2)))))   ;Discrimiate-Const-of-Arrow__FV
+(assert (forall ((v0 Object) (v1 Object)) (not (= (Arrow__Ctor v0 v1) noType__Ctor))))   ;Discrimiate-Const-of-Arrow__noType
+(assert (forall ((v0 Object) (v1 Object) (v2 Int) (v3 Object) (v4 Object)) (not (= (Arrow__Ctor v0 v1) (Cons__Ctor v2 v3 v4)))))   ;Discrimiate-Const-of-Arrow__Cons
+(assert (forall ((v0 Object) (v1 Object)) (not (= (Arrow__Ctor v0 v1) Nil__Ctor))))   ;Discrimiate-Const-of-Arrow__Nil
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object)) (not (= (Arrow__Ctor v0 v1) (HP__Ctor v2 v3 v4)))))   ;Discrimiate-Const-of-Arrow__HP
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Int)) (not (= (Arrow__Ctor v0 v1) (TVar__Ctor v2 v3)))))   ;Discrimiate-Const-of-Arrow__TVar
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Int) (v4 Object) (v5 Object) (v6 Object) (v7 Object)) (not (= (Arrow__Ctor v0 v1) (TAbs__Ctor v2 v3 v4 v5 v6 v7)))))   ;Discrimiate-Const-of-Arrow__TAbs
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Object)) (not (= (Arrow__Ctor v0 v1) (TApp__Ctor v2 v3 v4 v5 v6 v7 v8)))))   ;Discrimiate-Const-of-Arrow__TApp
+(assert (forall ((v0 Int) (v1 Object)) (not (= noType__Ctor (Lambda__Ctor v0 v1)))))   ;Discrimiate-Const-of-noType__Lambda
+(assert (forall ((v0 Object) (v1 Object)) (not (= noType__Ctor (App__Ctor v0 v1)))))   ;Discrimiate-Const-of-noType__App
+(assert (forall ((v0 Int)) (not (= noType__Ctor (FV__Ctor v0)))))   ;Discrimiate-Const-of-noType__FV
+(assert (forall ((v0 Object) (v1 Object)) (not (= noType__Ctor (Arrow__Ctor v0 v1)))))   ;Discrimiate-Const-of-noType__Arrow
+(assert (forall ((v0 Int) (v1 Object) (v2 Object)) (not (= noType__Ctor (Cons__Ctor v0 v1 v2)))))   ;Discrimiate-Const-of-noType__Cons
+(assert (not (= noType__Ctor Nil__Ctor)))   ;Discrimiate-Const-of-noType__Nil
+(assert (forall ((v0 Object) (v1 Object) (v2 Object)) (not (= noType__Ctor (HP__Ctor v0 v1 v2)))))   ;Discrimiate-Const-of-noType__HP
+(assert (forall ((v0 Object) (v1 Int)) (not (= noType__Ctor (TVar__Ctor v0 v1)))))   ;Discrimiate-Const-of-noType__TVar
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object)) (not (= noType__Ctor (TAbs__Ctor v0 v1 v2 v3 v4 v5)))))   ;Discrimiate-Const-of-noType__TAbs
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object)) (not (= noType__Ctor (TApp__Ctor v0 v1 v2 v3 v4 v5 v6)))))   ;Discrimiate-Const-of-noType__TApp
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Int) (v4 Object)) (not (= (Cons__Ctor v0 v1 v2) (Lambda__Ctor v3 v4)))))   ;Discrimiate-Const-of-Cons__Lambda
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object) (v4 Object)) (not (= (Cons__Ctor v0 v1 v2) (App__Ctor v3 v4)))))   ;Discrimiate-Const-of-Cons__App
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Int)) (not (= (Cons__Ctor v0 v1 v2) (FV__Ctor v3)))))   ;Discrimiate-Const-of-Cons__FV
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object) (v4 Object)) (not (= (Cons__Ctor v0 v1 v2) (Arrow__Ctor v3 v4)))))   ;Discrimiate-Const-of-Cons__Arrow
+(assert (forall ((v0 Int) (v1 Object) (v2 Object)) (not (= (Cons__Ctor v0 v1 v2) noType__Ctor))))   ;Discrimiate-Const-of-Cons__noType
+(assert (forall ((v0 Int) (v1 Object) (v2 Object)) (not (= (Cons__Ctor v0 v1 v2) Nil__Ctor))))   ;Discrimiate-Const-of-Cons__Nil
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object)) (not (= (Cons__Ctor v0 v1 v2) (HP__Ctor v3 v4 v5)))))   ;Discrimiate-Const-of-Cons__HP
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object) (v4 Int)) (not (= (Cons__Ctor v0 v1 v2) (TVar__Ctor v3 v4)))))   ;Discrimiate-Const-of-Cons__TVar
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object) (v4 Int) (v5 Object) (v6 Object) (v7 Object) (v8 Object)) (not (= (Cons__Ctor v0 v1 v2) (TAbs__Ctor v3 v4 v5 v6 v7 v8)))))   ;Discrimiate-Const-of-Cons__TAbs
+(assert (forall ((v0 Int) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Object) (v9 Object)) (not (= (Cons__Ctor v0 v1 v2) (TApp__Ctor v3 v4 v5 v6 v7 v8 v9)))))   ;Discrimiate-Const-of-Cons__TApp
+(assert (forall ((v0 Int) (v1 Object)) (not (= Nil__Ctor (Lambda__Ctor v0 v1)))))   ;Discrimiate-Const-of-Nil__Lambda
+(assert (forall ((v0 Object) (v1 Object)) (not (= Nil__Ctor (App__Ctor v0 v1)))))   ;Discrimiate-Const-of-Nil__App
+(assert (forall ((v0 Int)) (not (= Nil__Ctor (FV__Ctor v0)))))   ;Discrimiate-Const-of-Nil__FV
+(assert (forall ((v0 Object) (v1 Object)) (not (= Nil__Ctor (Arrow__Ctor v0 v1)))))   ;Discrimiate-Const-of-Nil__Arrow
+(assert (not (= Nil__Ctor noType__Ctor)))   ;Discrimiate-Const-of-Nil__noType
+(assert (forall ((v0 Int) (v1 Object) (v2 Object)) (not (= Nil__Ctor (Cons__Ctor v0 v1 v2)))))   ;Discrimiate-Const-of-Nil__Cons
+(assert (forall ((v0 Object) (v1 Object) (v2 Object)) (not (= Nil__Ctor (HP__Ctor v0 v1 v2)))))   ;Discrimiate-Const-of-Nil__HP
+(assert (forall ((v0 Object) (v1 Int)) (not (= Nil__Ctor (TVar__Ctor v0 v1)))))   ;Discrimiate-Const-of-Nil__TVar
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object)) (not (= Nil__Ctor (TAbs__Ctor v0 v1 v2 v3 v4 v5)))))   ;Discrimiate-Const-of-Nil__TAbs
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object)) (not (= Nil__Ctor (TApp__Ctor v0 v1 v2 v3 v4 v5 v6)))))   ;Discrimiate-Const-of-Nil__TApp
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Int) (v4 Object)) (not (= (HP__Ctor v0 v1 v2) (Lambda__Ctor v3 v4)))))   ;Discrimiate-Const-of-HP__Lambda
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object)) (not (= (HP__Ctor v0 v1 v2) (App__Ctor v3 v4)))))   ;Discrimiate-Const-of-HP__App
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Int)) (not (= (HP__Ctor v0 v1 v2) (FV__Ctor v3)))))   ;Discrimiate-Const-of-HP__FV
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object)) (not (= (HP__Ctor v0 v1 v2) (Arrow__Ctor v3 v4)))))   ;Discrimiate-Const-of-HP__Arrow
+(assert (forall ((v0 Object) (v1 Object) (v2 Object)) (not (= (HP__Ctor v0 v1 v2) noType__Ctor))))   ;Discrimiate-Const-of-HP__noType
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Int) (v4 Object) (v5 Object)) (not (= (HP__Ctor v0 v1 v2) (Cons__Ctor v3 v4 v5)))))   ;Discrimiate-Const-of-HP__Cons
+(assert (forall ((v0 Object) (v1 Object) (v2 Object)) (not (= (HP__Ctor v0 v1 v2) Nil__Ctor))))   ;Discrimiate-Const-of-HP__Nil
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Int)) (not (= (HP__Ctor v0 v1 v2) (TVar__Ctor v3 v4)))))   ;Discrimiate-Const-of-HP__TVar
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Int) (v5 Object) (v6 Object) (v7 Object) (v8 Object)) (not (= (HP__Ctor v0 v1 v2) (TAbs__Ctor v3 v4 v5 v6 v7 v8)))))   ;Discrimiate-Const-of-HP__TAbs
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Object) (v9 Object)) (not (= (HP__Ctor v0 v1 v2) (TApp__Ctor v3 v4 v5 v6 v7 v8 v9)))))   ;Discrimiate-Const-of-HP__TApp
+(assert (forall ((v0 Object) (v1 Int) (v2 Int) (v3 Object)) (not (= (TVar__Ctor v0 v1) (Lambda__Ctor v2 v3)))))   ;Discrimiate-Const-of-TVar__Lambda
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object)) (not (= (TVar__Ctor v0 v1) (App__Ctor v2 v3)))))   ;Discrimiate-Const-of-TVar__App
+(assert (forall ((v0 Object) (v1 Int) (v2 Int)) (not (= (TVar__Ctor v0 v1) (FV__Ctor v2)))))   ;Discrimiate-Const-of-TVar__FV
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object)) (not (= (TVar__Ctor v0 v1) (Arrow__Ctor v2 v3)))))   ;Discrimiate-Const-of-TVar__Arrow
+(assert (forall ((v0 Object) (v1 Int)) (not (= (TVar__Ctor v0 v1) noType__Ctor))))   ;Discrimiate-Const-of-TVar__noType
+(assert (forall ((v0 Object) (v1 Int) (v2 Int) (v3 Object) (v4 Object)) (not (= (TVar__Ctor v0 v1) (Cons__Ctor v2 v3 v4)))))   ;Discrimiate-Const-of-TVar__Cons
+(assert (forall ((v0 Object) (v1 Int)) (not (= (TVar__Ctor v0 v1) Nil__Ctor))))   ;Discrimiate-Const-of-TVar__Nil
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object)) (not (= (TVar__Ctor v0 v1) (HP__Ctor v2 v3 v4)))))   ;Discrimiate-Const-of-TVar__HP
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Int) (v4 Object) (v5 Object) (v6 Object) (v7 Object)) (not (= (TVar__Ctor v0 v1) (TAbs__Ctor v2 v3 v4 v5 v6 v7)))))   ;Discrimiate-Const-of-TVar__TAbs
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Object)) (not (= (TVar__Ctor v0 v1) (TApp__Ctor v2 v3 v4 v5 v6 v7 v8)))))   ;Discrimiate-Const-of-TVar__TApp
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Int) (v7 Object)) (not (= (TAbs__Ctor v0 v1 v2 v3 v4 v5) (Lambda__Ctor v6 v7)))))   ;Discrimiate-Const-of-TAbs__Lambda
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object)) (not (= (TAbs__Ctor v0 v1 v2 v3 v4 v5) (App__Ctor v6 v7)))))   ;Discrimiate-Const-of-TAbs__App
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Int)) (not (= (TAbs__Ctor v0 v1 v2 v3 v4 v5) (FV__Ctor v6)))))   ;Discrimiate-Const-of-TAbs__FV
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object)) (not (= (TAbs__Ctor v0 v1 v2 v3 v4 v5) (Arrow__Ctor v6 v7)))))   ;Discrimiate-Const-of-TAbs__Arrow
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object)) (not (= (TAbs__Ctor v0 v1 v2 v3 v4 v5) noType__Ctor))))   ;Discrimiate-Const-of-TAbs__noType
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Int) (v7 Object) (v8 Object)) (not (= (TAbs__Ctor v0 v1 v2 v3 v4 v5) (Cons__Ctor v6 v7 v8)))))   ;Discrimiate-Const-of-TAbs__Cons
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object)) (not (= (TAbs__Ctor v0 v1 v2 v3 v4 v5) Nil__Ctor))))   ;Discrimiate-Const-of-TAbs__Nil
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Object)) (not (= (TAbs__Ctor v0 v1 v2 v3 v4 v5) (HP__Ctor v6 v7 v8)))))   ;Discrimiate-Const-of-TAbs__HP
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Int)) (not (= (TAbs__Ctor v0 v1 v2 v3 v4 v5) (TVar__Ctor v6 v7)))))   ;Discrimiate-Const-of-TAbs__TVar
+(assert (forall ((v0 Object) (v1 Int) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Object) (v9 Object) (v10 Object) (v11 Object) (v12 Object)) (not (= (TAbs__Ctor v0 v1 v2 v3 v4 v5) (TApp__Ctor v6 v7 v8 v9 v10 v11 v12)))))   ;Discrimiate-Const-of-TAbs__TApp
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Int) (v8 Object)) (not (= (TApp__Ctor v0 v1 v2 v3 v4 v5 v6) (Lambda__Ctor v7 v8)))))   ;Discrimiate-Const-of-TApp__Lambda
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Object)) (not (= (TApp__Ctor v0 v1 v2 v3 v4 v5 v6) (App__Ctor v7 v8)))))   ;Discrimiate-Const-of-TApp__App
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Int)) (not (= (TApp__Ctor v0 v1 v2 v3 v4 v5 v6) (FV__Ctor v7)))))   ;Discrimiate-Const-of-TApp__FV
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Object)) (not (= (TApp__Ctor v0 v1 v2 v3 v4 v5 v6) (Arrow__Ctor v7 v8)))))   ;Discrimiate-Const-of-TApp__Arrow
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object)) (not (= (TApp__Ctor v0 v1 v2 v3 v4 v5 v6) noType__Ctor))))   ;Discrimiate-Const-of-TApp__noType
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Int) (v8 Object) (v9 Object)) (not (= (TApp__Ctor v0 v1 v2 v3 v4 v5 v6) (Cons__Ctor v7 v8 v9)))))   ;Discrimiate-Const-of-TApp__Cons
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object)) (not (= (TApp__Ctor v0 v1 v2 v3 v4 v5 v6) Nil__Ctor))))   ;Discrimiate-Const-of-TApp__Nil
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Object) (v9 Object)) (not (= (TApp__Ctor v0 v1 v2 v3 v4 v5 v6) (HP__Ctor v7 v8 v9)))))   ;Discrimiate-Const-of-TApp__HP
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Int)) (not (= (TApp__Ctor v0 v1 v2 v3 v4 v5 v6) (TVar__Ctor v7 v8)))))   ;Discrimiate-Const-of-TApp__TVar
+(assert (forall ((v0 Object) (v1 Object) (v2 Object) (v3 Object) (v4 Object) (v5 Object) (v6 Object) (v7 Object) (v8 Int) (v9 Object) (v10 Object) (v11 Object) (v12 Object)) (not (= (TApp__Ctor v0 v1 v2 v3 v4 v5 v6) (TAbs__Ctor v7 v8 v9 v10 v11 v12)))))   ;Discrimiate-Const-of-TApp__TAbs
+(assert (not (and (forall ((Te1_ Object) (e Object) (t2 Object) (g Object) (tt Object) (Tee2 Object) (v Object) (Tee1 Object) (Te2_ Object) (x Int) (t Object) (self Object))(=>  (and (Subclass (Tag Te1_) HasType) (Subclass (Tag e) Expr) (Subclass (Tag t2) Type) (Subclass (Tag g) Env) (Subclass (Tag tt) Arrow) (Subclass (Tag Tee2) HasType) (Subclass (Tag v) TApp) (Subclass (Tag Tee1) HasType) (Subclass (Tag Te2_) HasType) (Subclass (Tag t) Type) (Subclass (Tag self) TApp) true true true (= (TApp__prop self ) (HP__Ctor g e t)) (TApp__fresh self x) true (= (HasType__prop Tee1 ) (HP__Ctor (TApp__g self) (TApp__e1 self) (Arrow__Ctor (TApp__t1 self) (TApp__t2 self)))) (= Tee1 (TApp__Te1 self)) (= (HasType__prop Tee2 ) (HP__Ctor (TApp__g self) (TApp__e2 self) (TApp__t1 self))) (= Tee2 (TApp__Te2 self)) true (= tt (Arrow__Ctor (TApp__t1 self) (TApp__t2 self))) (= (HasType__prop Te1_ ) (HP__Ctor (Cons__Ctor x t2 (TApp__g self)) (TApp__e1 self) tt)) (= Te1_ (HasType__weaken (TApp__Te1 self) (TApp__g self) (TApp__e1 self) tt x t2)) (= (HasType__prop Te2_ ) (HP__Ctor (Cons__Ctor x t2 (TApp__g self)) (TApp__e2 self) (TApp__t1 self))) (= Te2_ (HasType__weaken (TApp__Te2 self) (TApp__g self) (TApp__e2 self) (TApp__t1 self) x t2)) true (= v (TApp__Ctor (Cons__Ctor x t2 (TApp__g self)) (TApp__e1 self) (TApp__e2 self) (TApp__t1 self) (TApp__t2 self) Te1_ Te2_)) ) (and (= (TApp__prop v ) (HP__Ctor (Cons__Ctor x t2 g) e t)) ) )) true ) ))
+(check-sat)

@@ -1,0 +1,35 @@
+(declare-datatypes (T) ((Lst nil (cons (hd T) (tl Lst)))))
+(declare-const l1 (Lst Int))
+(declare-const k Int)
+
+(define-fun-rec insert ((ls (Lst Int)) (k Int)) (Lst Int)
+   (if (is-nil ls) 
+        (cons k ls) 
+        (if (>= (hd ls) k) 
+            (cons k ls)
+            (cons (hd ls) (insert (tl ls) k))
+        )
+    )
+)
+
+(define-fun-rec sorted ((ls (Lst Int))) Bool
+   (if (is-nil ls) 
+        true
+        (if (is-nil (tl ls))
+            true 
+            (and (< (hd ls) (hd (tl ls))) (sorted (tl (tl ls))))
+        )
+    )
+)
+
+;(assert (not (or (is-nil l1) (is-cons l1))))
+(assert 
+(not 
+    (=> (and (and (is-cons l1) (sorted l1)) (< (hd l1) k))
+        (<  (hd l1) (hd (insert (tl l1) k)))
+    )
+)
+)
+
+(check-sat)
+

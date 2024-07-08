@@ -1,0 +1,9 @@
+(declare-const c Int)
+(declare-const good Int)
+(declare-fun Tag (Int) Int)
+(declare-fun ToInt (Int) Int)
+
+(assert (forall ((x Int)) (=> (= (Tag x) good) (exists ((y Int)) (= x (+ y 1))))))
+(assert (forall ((x Int) (y Int)) (= (ToInt x) (ite (= x (+ y 1)) 1 2))))
+(assert (not (=> (= (Tag c) good) (= (ToInt c) 1))))
+(check-sat)
